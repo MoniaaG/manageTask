@@ -26,8 +26,8 @@ Vue.component('task-dnd', require('./components/TaskDnd.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import App from './components/TaskDnd'
+import App from './components/TaskDnd';
 const app = new Vue({
-    el: '#tasks',
+    el: '#app',
     components: { App }
 });

@@ -11,9 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    @if(Route::currentRouteName() == 'project.create')
+        <script src="{{ mix('/js/app.js') }}" ></script>
+    @else 
+    <script src="{{ mix('/js/app.js') }}" defer></script>
+    @endif
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    @yield('vuejs')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,7 +26,6 @@
     @toastr_css
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <script defer src="{{ mix('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             //
@@ -110,8 +113,6 @@
         </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
-
-    @toastr_js
-    @toastr_render
+    @yield('js')
 </body>
 </html>

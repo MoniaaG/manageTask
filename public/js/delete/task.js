@@ -21,7 +21,7 @@ $(document).ready(function () {
       },
       callback: function callback(confirm) {
         if (confirm) {
-          axios["delete"]('./task/delete', {
+          axios["delete"]('/task/delete', {
             data: {
               id: id
             }

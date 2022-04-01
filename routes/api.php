@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::put('/task/updateOrder', [TaskController::class, 'updateOrder']);
+Route::put('/task/updateOrder', [TaskController::class, 'updateOrder'])->name('task.updateOrder');
 Route::post('/task/show', [TaskController::class, 'show'])->name('task.show');
 
 

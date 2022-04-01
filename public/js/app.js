@@ -5447,7 +5447,7 @@ var _this = undefined;
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "App",
+  name: "TaskDnd",
   components: {
     Container: vue_smooth_dnd__WEBPACK_IMPORTED_MODULE_2__.Container,
     Draggable: vue_smooth_dnd__WEBPACK_IMPORTED_MODULE_2__.Draggable,
@@ -5456,21 +5456,38 @@ var _this = undefined;
   },
   props: {
     cards: {
-      type: [],
       "default": function _default() {
         return _this.tasks;
       }
     },
     statuses: {
-      type: [],
       "default": function _default() {
         return _this.statuses;
       }
     },
     priorities: {
-      type: [],
       "default": function _default() {
         return _this.priorities;
+      }
+    },
+    route_update: {
+      "default": function _default() {
+        return _this.route_update;
+      }
+    },
+    route_show: {
+      "default": function _default() {
+        return _this.route_show;
+      }
+    },
+    route_get: {
+      "default": function _default() {
+        return _this.route_get;
+      }
+    },
+    project: {
+      "default": function _default() {
+        return _this.project;
       }
     }
   },
@@ -5478,13 +5495,16 @@ var _this = undefined;
     return {
       cards: [],
       statuses: [],
-      priorities: []
+      priorities: [],
+      route_show: this.route_show,
+      route_update: this.route_update,
+      route_get: this.route_get
     };
   },
   computed: {},
   methods: {
     updateOrder: function updateOrder(id, status) {
-      axios.put('./api/task/updateOrder', {
+      axios.put(this.route_update, {
         id: id,
         status: status
       });
@@ -5492,7 +5512,12 @@ var _this = undefined;
     getData: function getData() {
       var _this2 = this;
 
-      axios.get('./task/get').then(function (response) {
+      var params = {
+        project_id: this.project
+      };
+      axios.get(this.route_get, {
+        params: params
+      }).then(function (response) {
         _this2.cards = response.data.tasks;
         _this2.statuses = response.data.statuses;
         _this2.priorities = response.data.priorities;
@@ -5514,7 +5539,7 @@ var _this = undefined;
     },
     clickFunction: function clickFunction(e) {
       $('#exampleModalCenter').modal('show');
-      axios.post('./api/task/show', {
+      axios.post(this.route_show, {
         id: $(e.target).data('task')
       }).then(function (response) {
         $('#title').val(response.data.task['title']);
@@ -5569,7 +5594,7 @@ Vue.component('task-dnd', (__webpack_require__(/*! ./components/TaskDnd.vue */ "
 
 
 var app = new Vue({
-  el: '#tasks',
+  el: '#app',
   components: {
     App: _components_TaskDnd__WEBPACK_IMPORTED_MODULE_0__["default"]
   }

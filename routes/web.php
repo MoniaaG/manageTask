@@ -23,16 +23,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/tasks', [TaskController::class, 'index'])->name('task.index');
-    Route::get('/task/get',[TaskController::class, 'getTasks']);
-    Route::get('/task/show', [TaskController::class, 'show'])->name('task.show');
+    
+    Route::get('/task/get',[TaskController::class, 'getTasks'])->name('task.index');
+    //Route::get('/task/show', [TaskController::class, 'show'])->name('task.show');
     Route::get('/task/create', [TaskController::class, 'create'])->name('task.create');
     Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
     Route::get('/task/edit/{task}', [TaskController::class, 'edit'])->name('task.edit');
     Route::put('/task/update', [TaskController::class, 'update'])->name('task.update');
     Route::delete('/task/delete', [TaskController::class, 'delete'])->name('task.delete');
+    Route::get('/tasks/{project}', [TaskController::class, 'index'])->name('task.project');
 
     Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+    //Route::get('/project/show/{project}', [ProjectController::class, 'show'])->name('project.show');
     Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
     Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
     Route::get('/project/edit/{project}', [ProjectController::class, 'edit'])->name('project.edit');

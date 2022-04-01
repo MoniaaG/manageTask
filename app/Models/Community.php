@@ -16,4 +16,8 @@ class Community extends Model
     public function creator() {
         return $this->hasOne(User::class);
     }
+
+    public function projects() {
+        return $this->hasMany(Project::class);
+    }
 }

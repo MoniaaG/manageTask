@@ -8,7 +8,7 @@ $(document).ready(function () {
     e.preventDefault();
     var json = getFormData($('#update-task-form'));
     json["task_id"] = $(e.target).attr('data-task');
-    axios.put('./task/update', json).then(function (response) {
+    axios.put('/task/update', json).then(function (response) {
       var updateElement = $(".drag-el[data-task=\"".concat($(e.target).attr('data-task'), "\"]"));
       updateElement.html(json["title"]);
     });
@@ -31,9 +31,7 @@ $(document).ready(function () {
     e.preventDefault();
     var json = getFormData($('#add-task-form'));
     json["status"] = $(e.target).attr('data-status');
-    axios.post('./task/store', json).then(function (response) {
-      console.log('add tgask');
-      $(location).attr("href", '/tasks');
+    axios.post('/task/store', json).then(function (response) {//$(location).attr("href", '/tasks');
     });
   });
 });

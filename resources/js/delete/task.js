@@ -17,7 +17,7 @@ $(document).ready(function() {
             },
             callback: function(confirm) {
                 if( confirm ) {
-                        axios.delete('./task/delete', {data: {id: id}})
+                        axios.delete('/task/delete', {data: {id: id}})
                         .then((response) => {
                             bootbox.alert({
                                 title: 'Task was deleted',

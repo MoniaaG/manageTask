@@ -8,6 +8,8 @@ use App\Statements\Priority;
 use App\Statements\Status;
 use Illuminate\Http\Request;
 use App\Http\Requests\Task\UpdateRequest;
+use App\Http\Requests\Task\GetTaskDataRequest;
+use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -20,11 +22,11 @@ class TaskController extends Controller
         $this->task_repository = $task_repository;
     }
 
-    public function index() {
-        $tasks = Task::where('creator_id', Auth::id())->orderBy('order', 'asc')->get();
+    public function index(Project $project) {
+        $tasks = $project->tasks;
         $statuses = Status::status();
         $priorities = Priority::priority();
-        return view('task.index', compact('tasks', 'statuses', 'priorities'));
+        return view('task.index', compact('tasks', 'statuses', 'priorities', 'project'));
     }
 
     public function show(Request $request) {
@@ -60,8 +62,9 @@ class TaskController extends Controller
         $task->update(['status' => $request->status]);
     }
 
-    public function getTasks() {
-        $tasks = Task::where('creator_id', Auth::id())->get();
+    public function getTasks(GetTaskDataRequest $request) {
+        $project = Project::findOrFail($request->project_id);
+        $tasks = $project->tasks;
         $statuses = Status::status();
         $priorities = Priority::priority();
         return response()->json(['tasks' => $tasks, 'statuses' => $statuses, 'priorities' => $priorities]);

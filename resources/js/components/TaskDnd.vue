@@ -17,7 +17,7 @@ import ModalShowTask from './ModalShowTask';
 import ModalCreateTask from './ModalCreateTask';
 import {Container, Draggable} from "vue-smooth-dnd";
     export default {
-        name: "App",
+        name: "TaskDnd",
         components: {
             Container,
             Draggable,
@@ -26,16 +26,25 @@ import {Container, Draggable} from "vue-smooth-dnd";
         },
         props: {
             cards: {
-                type: [],
                 default: () => this.tasks,
             },
             statuses: {
-                type: [],
                 default: () => this.statuses,
             },
             priorities: {
-                type: [],
                 default: () => this.priorities,
+            },
+            route_update: {
+                default: () => this.route_update,
+            },
+            route_show: {
+                default: () => this.route_show,
+            },
+            route_get: {
+                default: () => this.route_get,
+            },
+            project: {
+                default: () => this.project,
             }
         },
         data() {
@@ -43,6 +52,9 @@ import {Container, Draggable} from "vue-smooth-dnd";
             cards: [],
             statuses: [],
             priorities: [],
+            route_show: this.route_show,
+            route_update: this.route_update,
+            route_get: this.route_get,
             }
         },
         computed: {
@@ -50,10 +62,13 @@ import {Container, Draggable} from "vue-smooth-dnd";
         },
         methods: {
             updateOrder(id, status) {
-                axios.put('./api/task/updateOrder', {id: id, status: status});
+                axios.put(this.route_update, {id: id, status: status});
             },
             getData() {
-                axios.get('./task/get')
+                var params = {
+                    project_id: this.project,
+                };
+                axios.get(this.route_get, {params})
                 .then((response) => {
                     this.cards = response.data.tasks;
                     this.statuses = response.data.statuses;
@@ -77,7 +92,7 @@ import {Container, Draggable} from "vue-smooth-dnd";
 
             clickFunction(e) {
                 $('#exampleModalCenter').modal('show');
-                axios.post('./api/task/show', {id: $(e.target).data('task')})
+                axios.post(this.route_show, {id: $(e.target).data('task')})
                 .then((response) => {
                     $('#title').val(response.data.task['title']);
                     $('#description').html(response.data.task['description']);

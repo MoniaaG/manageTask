@@ -17,12 +17,19 @@ class ProjectController extends Controller
     }
 
     public function index() {
-        $projects = Auth::user()->projects;
+        $projects = Auth::user()->community->projects()->get();
         return view('project.index', compact('projects'));
     }
 
+    public function show(Project $project) {
+        $tasks = $project->tasks;
+        $statuses = Status::status();
+        $priorities = Priority::priority();
+        return view('task.index', compact('tasks', 'statuses', 'priorities'));
+    }
+
     public function create() {
-        $users = Auth::user()->community()->users;
+        $users = Auth::user()->community->users()->get();
         return view('project.create', compact('users'));
     }
 
