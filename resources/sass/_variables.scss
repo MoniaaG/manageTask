@@ -5,3 +5,31 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+.low {
+    color: green;
+}
+
+.medium {
+    color: orange;
+}
+
+.high {
+    color: red;
+}
+
+.shadow-orange {
+    box-shadow: 0 0.125rem 0.3rem rgba(253, 126, 20, 0.75) !important;
+}
+
+.text-warning {
+    color: rgb(253, 126, 20) !important;
+}
+
+.circle {
+    border-radius: 2rem !important;
+}
+
+.border-radius {
+    border-radius: 1.2rem !important;
+}

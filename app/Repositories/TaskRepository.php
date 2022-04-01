@@ -20,20 +20,19 @@ class TaskRepository implements TaskRepositoryInterface {
         return $task;
     }
 
-    public function update(Request $request, Task $task) {
-        $task = Task::findOrFail($task->id);
+    public function update(Request $request) {
+        $task = Task::findOrFail($request->task_id);
         $task->title = $request->title;
         $task->description = $request->description ?? null;
         $task->creator_id = Auth::id();
-        $task->project_id = $request->project_id;
+        $task->project_id = $request->project_id ?? 1;
         $task->priority = $request->priority;
-        $task->status = $request->status;
         $task->save();
         return $task;
     }
 
-    public function delete(Task $task) {
-        $task = Task::findOrFail($task->id);
+    public function delete(Request $request) {
+        $task = Task::findOrFail($request->id);
         $task->delete();
     }
 }
