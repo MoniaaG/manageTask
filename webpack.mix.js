@@ -12,5 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/delete/task.js', 'public/js/delete')
+    .js('resources/js/task/task_add_update.js', 'public/js/task')
     .vue()
     .sass('resources/sass/app.scss', 'public/css');

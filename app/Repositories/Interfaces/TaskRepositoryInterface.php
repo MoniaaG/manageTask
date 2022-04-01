@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 interface TaskRepositoryInterface {
     public function store(Request $request);
 
-    public function update(Task $task, Request $request);
+    public function update(Request $request);
 
-    public function delete(Task $task);
+    public function delete(Request $request);
 }

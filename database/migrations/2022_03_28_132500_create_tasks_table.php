@@ -25,6 +25,7 @@ class CreateTasksTable extends Migration
             $table->foreign('project_id')->references('id')->on('projects');
             $table->enum('priority', Priority::priority())->default(Priority::low);
             $table->enum('status', Status::status())->default(Status::toDo);
+            $table->unsignedBigInteger('order');
             $table->timestamps();
         });
     }

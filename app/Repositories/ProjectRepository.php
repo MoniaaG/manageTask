@@ -17,7 +17,7 @@ class ProjectRepository implements ProjectRepositoryInterface {
         return $project;
     }
 
-    public function update(Request $request, Project $project) {
+    public function update(Project $project, Request $request) {
         $project = Project::findOrFail($project->id);
         $project->title = $request->title;
         $project->description =  $request->description ?? null;
