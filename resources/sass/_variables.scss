@@ -33,3 +33,42 @@ $line-height-base: 1.6;
 .border-radius {
     border-radius: 1.2rem !important;
 }
+
+.task_board {
+    background-color: white;
+    border-radius: 1.5rem;
+    height: 80%;
+}
+.task-list {
+    background: bisque;
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+    min-height: 10px;
+    height: fit-content;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.1rem 0.2rem 0 orange;
+}
+.drop-zone {
+    width: calc(100% - 5px);
+    padding: 0;
+    background:transparent;
+    min-height: 10px;
+}
+
+.placeholder {
+    background: yellow;
+    border-radius: 1.2rem;
+}
+
+.drag-el {
+    cursor:pointer;
+    color: white;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 1.2rem;
+}
+
+drag-el:nth-last-of-type(1) {
+    margin-bottom: 0;
+}

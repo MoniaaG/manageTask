@@ -6,6 +6,8 @@ var __webpack_exports__ = {};
 $(document).ready(function () {
   $(document).on('click', "[data-delete-href]", function () {
     var id = $(this).data("delete-href");
+    var pro_id = $('.task-list').data('project');
+    console.log('xd');
     bootbox.confirm({
       title: 'Delete task',
       message: "<div class=\"modal-icon\"><i class=\"far fa-trash-alt mr-1\"></i><span> Do you want to delete this task?</span></div>",
@@ -21,7 +23,7 @@ $(document).ready(function () {
       },
       callback: function callback(confirm) {
         if (confirm) {
-          axios["delete"]('./task/delete', {
+          axios["delete"]('/task/delete', {
             data: {
               id: id
             }
@@ -30,7 +32,7 @@ $(document).ready(function () {
               title: 'Task was deleted',
               message: "<div class=\"modal-icon\"><i class=\"fa fa-check text-success mr-1\"></i><span>Deleted</span></div>",
               callback: function callback(confirm) {
-                $(location).attr("href", '/tasks');
+                $(location).attr("href", "/tasks/".concat(pro_id));
               }
             });
           }).error(function (response) {

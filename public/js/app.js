@@ -5255,293 +5255,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var _this = undefined;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ModalCreateTask",
-  props: {
-    priorities: {
-      type: [],
-      "default": function _default() {
-        return _this.priorities;
-      }
-    }
-  },
-  data: function data() {
-    return {
-      priorities: []
-    };
-  },
-  methods: {}
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var _this = undefined;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ModalShowTask",
-  components: {},
-  props: {
-    priorities: {
-      type: [],
-      "default": function _default() {
-        return _this.priorities;
-      }
-    }
-  },
-  data: function data() {
-    return {
-      priorities: []
-    };
-  },
-  methods: {}
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ModalShowTask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalShowTask */ "./resources/js/components/ModalShowTask.vue");
-/* harmony import */ var _ModalCreateTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalCreateTask */ "./resources/js/components/ModalCreateTask.vue");
-/* harmony import */ var vue_smooth_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-smooth-dnd */ "./node_modules/vue-smooth-dnd/dist/vue-smooth-dnd.esm.js");
-var _this = undefined;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "App",
-  components: {
-    Container: vue_smooth_dnd__WEBPACK_IMPORTED_MODULE_2__.Container,
-    Draggable: vue_smooth_dnd__WEBPACK_IMPORTED_MODULE_2__.Draggable,
-    ModalShowTask: _ModalShowTask__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ModalCreateTask: _ModalCreateTask__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
-  props: {
-    cards: {
-      type: [],
-      "default": function _default() {
-        return _this.tasks;
-      }
-    },
-    statuses: {
-      type: [],
-      "default": function _default() {
-        return _this.statuses;
-      }
-    },
-    priorities: {
-      type: [],
-      "default": function _default() {
-        return _this.priorities;
-      }
-    }
-  },
-  data: function data() {
-    return {
-      cards: [],
-      statuses: [],
-      priorities: []
-    };
-  },
-  computed: {},
-  methods: {
-    updateOrder: function updateOrder(id, status) {
-      axios.put('./api/task/updateOrder', {
-        id: id,
-        status: status
-      });
-    },
-    getData: function getData() {
-      var _this2 = this;
-
-      axios.get('./task/get').then(function (response) {
-        _this2.cards = response.data.tasks;
-        _this2.statuses = response.data.statuses;
-        _this2.priorities = response.data.priorities;
-      });
-      this.$forceUpdate();
-    },
-    startDrag: function startDrag(event, item) {
-      event.dataTransfer.dropEffect = 'all';
-      event.dataTransfer.effectAllowed = 'all';
-      event.dataTransfer.setData('itemID', item.id);
-    },
-    onDrop: function onDrop(event, task) {
-      var itemID = event.dataTransfer.getData("itemID");
-      var item = this.cards.find(function (task) {
-        return task.id == itemID;
-      });
-      this.updateOrder(itemID, task);
-      this.getData();
-    },
-    clickFunction: function clickFunction(e) {
-      $('#exampleModalCenter').modal('show');
-      axios.post('./api/task/show', {
-        id: $(e.target).data('task')
-      }).then(function (response) {
-        $('#title').val(response.data.task['title']);
-        $('#description').html(response.data.task['description']);
-        $("#priority option[value=\"".concat(response.data.task['priority'], "\"]")).attr('selected', 'selected');
-        $('.update-task').attr('data-task', response.data.task['id']);
-        $('.delete-task').attr('data-delete-href', response.data.task['id']);
-      });
-    },
-    addNewTask: function addNewTask(status) {
-      $('#modalCreateTask').modal('show');
-      $('.add-task').attr('data-status', status);
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_TaskDnd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TaskDnd */ "./resources/js/components/TaskDnd.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -5559,21 +5278,19 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//Vue.component('task-dnd', require('./components/TaskDnd.vue').default);
 
-Vue.component('task-dnd', (__webpack_require__(/*! ./components/TaskDnd.vue */ "./resources/js/components/TaskDnd.vue")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
-var app = new Vue({
-  el: '#tasks',
-  components: {
-    App: _components_TaskDnd__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
+/*import App from './components/TaskDnd'
+const app = new Vue({
+    el: '#tasks',
+    components: { App }
+});*/
 
 /***/ }),
 
@@ -5581,8 +5298,12 @@ var app = new Vue({
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var bootbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootbox */ "./node_modules/bootbox/bootbox.all.js");
+/* harmony import */ var bootbox__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootbox__WEBPACK_IMPORTED_MODULE_0__);
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 try {
@@ -5591,12 +5312,14 @@ try {
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 } catch (e) {}
+
+
+window.bootbox = (bootbox__WEBPACK_IMPORTED_MODULE_0___default());
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
-
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -5604,8 +5327,6 @@ var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -5620,6 +5341,1456 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./node_modules/bootbox/bootbox.all.js":
+/*!*********************************************!*\
+  !*** ./node_modules/bootbox/bootbox.all.js ***!
+  \*********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
+ * bootbox.js
+ * version: 5.5.2
+ * author: Nick Payne <nick@kurai.co.uk>
+ * license: MIT
+ * http://bootboxjs.com/
+ */
+(function (root, factory) {
+  'use strict';
+  if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+}(this, function init($, undefined) {
+  'use strict';
+
+  //  Polyfills Object.keys, if necessary.
+  //  @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+  if (!Object.keys) {
+    Object.keys = (function () {
+      var hasOwnProperty = Object.prototype.hasOwnProperty,
+        hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
+        dontEnums = [
+          'toString',
+          'toLocaleString',
+          'valueOf',
+          'hasOwnProperty',
+          'isPrototypeOf',
+          'propertyIsEnumerable',
+          'constructor'
+        ],
+        dontEnumsLength = dontEnums.length;
+
+      return function (obj) {
+        if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
+          throw new TypeError('Object.keys called on non-object');
+        }
+
+        var result = [], prop, i;
+
+        for (prop in obj) {
+          if (hasOwnProperty.call(obj, prop)) {
+            result.push(prop);
+          }
+        }
+
+        if (hasDontEnumBug) {
+          for (i = 0; i < dontEnumsLength; i++) {
+            if (hasOwnProperty.call(obj, dontEnums[i])) {
+              result.push(dontEnums[i]);
+            }
+          }
+        }
+
+        return result;
+      };
+    }());
+  }
+
+  var exports = {};
+
+  var VERSION = '5.5.2';
+  exports.VERSION = VERSION;
+
+  var locales = {
+      ar : {
+        OK      : 'موافق',
+        CANCEL  : 'الغاء',
+        CONFIRM : 'تأكيد'
+      },
+      bg_BG : {
+        OK      : 'Ок',
+        CANCEL  : 'Отказ',
+        CONFIRM : 'Потвърждавам'
+      },
+      br : {
+        OK      : 'OK',
+        CANCEL  : 'Cancelar',
+        CONFIRM : 'Sim'
+      },
+      cs : {
+        OK      : 'OK',
+        CANCEL  : 'Zrušit',
+        CONFIRM : 'Potvrdit'
+      },
+      da : {
+        OK      : 'OK',
+        CANCEL  : 'Annuller',
+        CONFIRM : 'Accepter'
+      },
+      de : {
+        OK      : 'OK',
+        CANCEL  : 'Abbrechen',
+        CONFIRM : 'Akzeptieren'
+      },
+      el : {
+        OK      : 'Εντάξει',
+        CANCEL  : 'Ακύρωση',
+        CONFIRM : 'Επιβεβαίωση'
+      },
+      en : {
+        OK      : 'OK',
+        CANCEL  : 'Cancel',
+        CONFIRM : 'OK'
+      },
+      es : {
+        OK      : 'OK',
+        CANCEL  : 'Cancelar',
+        CONFIRM : 'Aceptar'
+      },
+      eu : {
+        OK      : 'OK',
+        CANCEL  : 'Ezeztatu',
+        CONFIRM : 'Onartu'
+      },
+      et : {
+        OK      : 'OK',
+        CANCEL  : 'Katkesta',
+        CONFIRM : 'OK'
+      },
+      fa : {
+        OK      : 'قبول',
+        CANCEL  : 'لغو',
+        CONFIRM : 'تایید'
+      },
+      fi : {
+        OK      : 'OK',
+        CANCEL  : 'Peruuta',
+        CONFIRM : 'OK'
+      },
+      fr : {
+        OK      : 'OK',
+        CANCEL  : 'Annuler',
+        CONFIRM : 'Confirmer'
+      },
+      he : {
+        OK      : 'אישור',
+        CANCEL  : 'ביטול',
+        CONFIRM : 'אישור'
+      },
+      hu : {
+        OK      : 'OK',
+        CANCEL  : 'Mégsem',
+        CONFIRM : 'Megerősít'
+      },
+      hr : {
+        OK      : 'OK',
+        CANCEL  : 'Odustani',
+        CONFIRM : 'Potvrdi'
+      },
+      id : {
+        OK      : 'OK',
+        CANCEL  : 'Batal',
+        CONFIRM : 'OK'
+      },
+      it : {
+        OK      : 'OK',
+        CANCEL  : 'Annulla',
+        CONFIRM : 'Conferma'
+      },
+      ja : {
+        OK      : 'OK',
+        CANCEL  : 'キャンセル',
+        CONFIRM : '確認'
+      },
+      ka : {
+        OK: 'OK',
+        CANCEL: 'გაუქმება',
+        CONFIRM: 'დადასტურება'
+      },
+      ko : {
+        OK: 'OK',
+        CANCEL: '취소',
+        CONFIRM: '확인'
+      },
+      lt : {
+        OK      : 'Gerai',
+        CANCEL  : 'Atšaukti',
+        CONFIRM : 'Patvirtinti'
+      },
+      lv : {
+        OK      : 'Labi',
+        CANCEL  : 'Atcelt',
+        CONFIRM : 'Apstiprināt'
+      },
+      nl : {
+        OK      : 'OK',
+        CANCEL  : 'Annuleren',
+        CONFIRM : 'Accepteren'
+      },
+      no : {
+        OK      : 'OK',
+        CANCEL  : 'Avbryt',
+        CONFIRM : 'OK'
+      },
+      pl : {
+        OK      : 'OK',
+        CANCEL  : 'Anuluj',
+        CONFIRM : 'Potwierdź'
+      },
+      pt : {
+        OK      : 'OK',
+        CANCEL  : 'Cancelar',
+        CONFIRM : 'Confirmar'
+      },
+      ru : {
+        OK      : 'OK',
+        CANCEL  : 'Отмена',
+        CONFIRM : 'Применить'
+      },
+      sk : {
+        OK      : 'OK',
+        CANCEL  : 'Zrušiť',
+        CONFIRM : 'Potvrdiť'
+      },
+      sl : {
+        OK      : 'OK',
+        CANCEL  : 'Prekliči',
+        CONFIRM : 'Potrdi'
+      },
+      sq : {
+        OK      : 'OK',
+        CANCEL  : 'Anulo',
+        CONFIRM : 'Prano'
+      },
+      sv : {
+        OK      : 'OK',
+        CANCEL  : 'Avbryt',
+        CONFIRM : 'OK'
+      },
+      sw: {
+        OK      : 'Sawa',
+        CANCEL  : 'Ghairi',
+        CONFIRM: 'Thibitisha'
+      },
+      ta:{
+        OK      : 'சரி',
+        CANCEL  : 'ரத்து செய்',
+        CONFIRM : 'உறுதி செய்'
+      },
+      th : {
+        OK      : 'ตกลง',
+        CANCEL  : 'ยกเลิก',
+        CONFIRM : 'ยืนยัน'
+      },
+      tr : {
+        OK      : 'Tamam',
+        CANCEL  : 'İptal',
+        CONFIRM : 'Onayla'
+      },
+      uk : {
+        OK      : 'OK',
+        CANCEL  : 'Відміна',
+        CONFIRM : 'Прийняти'
+      },
+      vi : {
+        OK      : 'OK',
+        CANCEL  : 'Hủy bỏ',
+        CONFIRM : 'Xác nhận'
+      },
+      zh_CN : {
+        OK      : 'OK',
+        CANCEL  : '取消',
+        CONFIRM : '确认'
+      },
+      zh_TW : {
+        OK      : 'OK',
+        CANCEL  : '取消',
+        CONFIRM : '確認'
+      }
+  };
+
+  var templates = {
+    dialog:
+    '<div class="bootbox modal" tabindex="-1" role="dialog" aria-hidden="true">' +
+    '<div class="modal-dialog">' +
+    '<div class="modal-content">' +
+    '<div class="modal-body"><div class="bootbox-body"></div></div>' +
+    '</div>' +
+    '</div>' +
+    '</div>',
+    header:
+    '<div class="modal-header">' +
+    '<h5 class="modal-title"></h5>' +
+    '</div>',
+    footer:
+    '<div class="modal-footer"></div>',
+    closeButton:
+    '<button type="button" class="bootbox-close-button close" aria-hidden="true">&times;</button>',
+    form:
+    '<form class="bootbox-form"></form>',
+    button:
+    '<button type="button" class="btn"></button>',
+    option:
+    '<option></option>',
+    promptMessage:
+    '<div class="bootbox-prompt-message"></div>',
+    inputs: {
+      text:
+      '<input class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text" />',
+      textarea:
+      '<textarea class="bootbox-input bootbox-input-textarea form-control"></textarea>',
+      email:
+      '<input class="bootbox-input bootbox-input-email form-control" autocomplete="off" type="email" />',
+      select:
+      '<select class="bootbox-input bootbox-input-select form-control"></select>',
+      checkbox:
+      '<div class="form-check checkbox"><label class="form-check-label"><input class="form-check-input bootbox-input bootbox-input-checkbox" type="checkbox" /></label></div>',
+      radio:
+      '<div class="form-check radio"><label class="form-check-label"><input class="form-check-input bootbox-input bootbox-input-radio" type="radio" name="bootbox-radio" /></label></div>',
+      date:
+      '<input class="bootbox-input bootbox-input-date form-control" autocomplete="off" type="date" />',
+      time:
+      '<input class="bootbox-input bootbox-input-time form-control" autocomplete="off" type="time" />',
+      number:
+      '<input class="bootbox-input bootbox-input-number form-control" autocomplete="off" type="number" />',
+      password:
+      '<input class="bootbox-input bootbox-input-password form-control" autocomplete="off" type="password" />',
+      range:
+      '<input class="bootbox-input bootbox-input-range form-control-range" autocomplete="off" type="range" />'
+    }
+  };
+
+
+  var defaults = {
+    // default language
+    locale: 'en',
+    // show backdrop or not. Default to static so user has to interact with dialog
+    backdrop: 'static',
+    // animate the modal in/out
+    animate: true,
+    // additional class string applied to the top level dialog
+    className: null,
+    // whether or not to include a close button
+    closeButton: true,
+    // show the dialog immediately by default
+    show: true,
+    // dialog container
+    container: 'body',
+    // default value (used by the prompt helper)
+    value: '',
+    // default input type (used by the prompt helper)
+    inputType: 'text',
+    // switch button order from cancel/confirm (default) to confirm/cancel
+    swapButtonOrder: false,
+    // center modal vertically in page
+    centerVertical: false,
+    // Append "multiple" property to the select when using the "prompt" helper
+    multiple: false,
+    // Automatically scroll modal content when height exceeds viewport height
+    scrollable: false,
+    // whether or not to destroy the modal on hide
+    reusable: false
+  };
+
+
+  // PUBLIC FUNCTIONS
+  // *************************************************************************************************************
+
+  // Return all currently registered locales, or a specific locale if "name" is defined
+  exports.locales = function (name) {
+    return name ? locales[name] : locales;
+  };
+
+
+  // Register localized strings for the OK, CONFIRM, and CANCEL buttons
+  exports.addLocale = function (name, values) {
+    $.each(['OK', 'CANCEL', 'CONFIRM'], function (_, v) {
+      if (!values[v]) {
+        throw new Error('Please supply a translation for "' + v + '"');
+      }
+    });
+
+    locales[name] = {
+      OK: values.OK,
+      CANCEL: values.CANCEL,
+      CONFIRM: values.CONFIRM
+    };
+
+    return exports;
+  };
+
+
+  // Remove a previously-registered locale
+  exports.removeLocale = function (name) {
+    if (name !== 'en') {
+      delete locales[name];
+    }
+    else {
+      throw new Error('"en" is used as the default and fallback locale and cannot be removed.');
+    }
+
+    return exports;
+  };
+
+
+  // Set the default locale
+  exports.setLocale = function (name) {
+    return exports.setDefaults('locale', name);
+  };
+
+
+  // Override default value(s) of Bootbox.
+  exports.setDefaults = function () {
+    var values = {};
+
+    if (arguments.length === 2) {
+      // allow passing of single key/value...
+      values[arguments[0]] = arguments[1];
+    } else {
+      // ... and as an object too
+      values = arguments[0];
+    }
+
+    $.extend(defaults, values);
+
+    return exports;
+  };
+
+
+  // Hides all currently active Bootbox modals
+  exports.hideAll = function () {
+    $('.bootbox').modal('hide');
+
+    return exports;
+  };
+
+
+  // Allows the base init() function to be overridden
+  exports.init = function (_$) {
+    return init(_$ || $);
+  };
+
+
+  // CORE HELPER FUNCTIONS
+  // *************************************************************************************************************
+
+  // Core dialog function
+  exports.dialog = function (options) {
+    if ($.fn.modal === undefined) {
+      throw new Error(
+        '"$.fn.modal" is not defined; please double check you have included ' +
+        'the Bootstrap JavaScript library. See https://getbootstrap.com/docs/4.4/getting-started/javascript/ ' +
+        'for more details.'
+      );
+    }
+
+    options = sanitize(options);
+
+    if ($.fn.modal.Constructor.VERSION) {
+      options.fullBootstrapVersion = $.fn.modal.Constructor.VERSION;
+      var i = options.fullBootstrapVersion.indexOf('.');
+      options.bootstrap = options.fullBootstrapVersion.substring(0, i);
+    }
+    else {
+      // Assuming version 2.3.2, as that was the last "supported" 2.x version
+      options.bootstrap = '2';
+      options.fullBootstrapVersion = '2.3.2';
+      console.warn('Bootbox will *mostly* work with Bootstrap 2, but we do not officially support it. Please upgrade, if possible.');
+    }
+
+    var dialog = $(templates.dialog);
+    var innerDialog = dialog.find('.modal-dialog');
+    var body = dialog.find('.modal-body');
+    var header = $(templates.header);
+    var footer = $(templates.footer);
+    var buttons = options.buttons;
+
+    var callbacks = {
+      onEscape: options.onEscape
+    };
+
+    body.find('.bootbox-body').html(options.message);
+
+    // Only attempt to create buttons if at least one has 
+    // been defined in the options object
+    if (getKeyLength(options.buttons) > 0) {
+      each(buttons, function (key, b) {
+        var button = $(templates.button);
+        button.data('bb-handler', key);
+        button.addClass(b.className);
+
+        switch (key) {
+          case 'ok':
+          case 'confirm':
+            button.addClass('bootbox-accept');
+            break;
+
+          case 'cancel':
+            button.addClass('bootbox-cancel');
+            break;
+        }
+
+        button.html(b.label);
+        footer.append(button);
+
+        callbacks[key] = b.callback;
+      });
+
+      body.after(footer);
+    }
+
+    if (options.animate === true) {
+      dialog.addClass('fade');
+    }
+
+    if (options.className) {
+      dialog.addClass(options.className);
+    }
+
+    if (options.size) {
+      // Requires Bootstrap 3.1.0 or higher
+      if (options.fullBootstrapVersion.substring(0, 3) < '3.1') {
+        console.warn('"size" requires Bootstrap 3.1.0 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.');
+      }
+
+      switch (options.size) {
+        case 'small':
+        case 'sm':
+          innerDialog.addClass('modal-sm');
+          break;
+
+        case 'large':
+        case 'lg':
+          innerDialog.addClass('modal-lg');
+          break;
+
+        case 'extra-large':
+        case 'xl':
+          innerDialog.addClass('modal-xl');
+
+          // Requires Bootstrap 4.2.0 or higher
+          if (options.fullBootstrapVersion.substring(0, 3) < '4.2') {
+            console.warn('Using size "xl"/"extra-large" requires Bootstrap 4.2.0 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.');
+          }
+          break;
+      }
+    }
+
+    if (options.scrollable) {
+      innerDialog.addClass('modal-dialog-scrollable');
+
+      // Requires Bootstrap 4.3.0 or higher
+      if (options.fullBootstrapVersion.substring(0, 3) < '4.3') {
+        console.warn('Using "scrollable" requires Bootstrap 4.3.0 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.');
+      }
+    }
+
+    if (options.title) {
+      body.before(header);
+      dialog.find('.modal-title').html(options.title);
+    }
+
+    if (options.closeButton) {
+      var closeButton = $(templates.closeButton);
+
+      if (options.title) {
+        if (options.bootstrap > 3) {
+          dialog.find('.modal-header').append(closeButton);
+        }
+        else {
+          dialog.find('.modal-header').prepend(closeButton);
+        }
+      } else {
+        closeButton.prependTo(body);
+      }
+    }
+
+    if (options.centerVertical) {
+      innerDialog.addClass('modal-dialog-centered');
+
+      // Requires Bootstrap 4.0.0-beta.3 or higher
+      if (options.fullBootstrapVersion < '4.0.0') {
+        console.warn('"centerVertical" requires Bootstrap 4.0.0-beta.3 or higher. You appear to be using ' + options.fullBootstrapVersion + '. Please upgrade to use this option.');
+      }
+    }
+
+    // Bootstrap event listeners; these handle extra
+    // setup & teardown required after the underlying
+    // modal has performed certain actions.
+
+    if(!options.reusable) {
+      // make sure we unbind any listeners once the dialog has definitively been dismissed
+      dialog.one('hide.bs.modal', { dialog: dialog }, unbindModal);
+    }
+
+    if (options.onHide) {
+      if ($.isFunction(options.onHide)) {
+        dialog.on('hide.bs.modal', options.onHide);
+      }
+      else {
+        throw new Error('Argument supplied to "onHide" must be a function');
+      }
+    }
+
+    if(!options.reusable) {
+      dialog.one('hidden.bs.modal', { dialog: dialog }, destroyModal);
+    }
+
+    if (options.onHidden) {
+      if ($.isFunction(options.onHidden)) {
+        dialog.on('hidden.bs.modal', options.onHidden);
+      }
+      else {
+        throw new Error('Argument supplied to "onHidden" must be a function');
+      }
+    }
+
+    if (options.onShow) {
+      if ($.isFunction(options.onShow)) {
+        dialog.on('show.bs.modal', options.onShow);
+      }
+      else {
+        throw new Error('Argument supplied to "onShow" must be a function');
+      }
+    }
+
+    dialog.one('shown.bs.modal', { dialog: dialog }, focusPrimaryButton);
+
+    if (options.onShown) {
+      if ($.isFunction(options.onShown)) {
+        dialog.on('shown.bs.modal', options.onShown);
+      }
+      else {
+        throw new Error('Argument supplied to "onShown" must be a function');
+      }
+    }
+
+    // Bootbox event listeners; used to decouple some
+    // behaviours from their respective triggers
+
+    if (options.backdrop === true) {
+      // A boolean true/false according to the Bootstrap docs
+      // should show a dialog the user can dismiss by clicking on
+      // the background.
+      // We always only ever pass static/false to the actual
+      // $.modal function because with "true" we can't trap
+      // this event (the .modal-backdrop swallows it)
+      // However, we still want to sort-of respect true
+      // and invoke the escape mechanism instead
+      dialog.on('click.dismiss.bs.modal', function (e) {
+        // @NOTE: the target varies in >= 3.3.x releases since the modal backdrop
+        // moved *inside* the outer dialog rather than *alongside* it
+        if (dialog.children('.modal-backdrop').length) {
+          e.currentTarget = dialog.children('.modal-backdrop').get(0);
+        }
+
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+
+        dialog.trigger('escape.close.bb');
+      });
+    }
+
+    dialog.on('escape.close.bb', function (e) {
+      // the if statement looks redundant but it isn't; without it
+      // if we *didn't* have an onEscape handler then processCallback
+      // would automatically dismiss the dialog
+      if (callbacks.onEscape) {
+        processCallback(e, dialog, callbacks.onEscape);
+      }
+    });
+
+
+    dialog.on('click', '.modal-footer button:not(.disabled)', function (e) {
+      var callbackKey = $(this).data('bb-handler');
+
+      if (callbackKey !== undefined) {
+        // Only process callbacks for buttons we recognize:
+        processCallback(e, dialog, callbacks[callbackKey]);
+      }
+    });
+
+    dialog.on('click', '.bootbox-close-button', function (e) {
+      // onEscape might be falsy but that's fine; the fact is
+      // if the user has managed to click the close button we
+      // have to close the dialog, callback or not
+      processCallback(e, dialog, callbacks.onEscape);
+    });
+
+    dialog.on('keyup', function (e) {
+      if (e.which === 27) {
+        dialog.trigger('escape.close.bb');
+      }
+    });
+
+    // the remainder of this method simply deals with adding our
+    // dialog element to the DOM, augmenting it with Bootstrap's modal
+    // functionality and then giving the resulting object back
+    // to our caller
+
+    $(options.container).append(dialog);
+
+    dialog.modal({
+      backdrop: options.backdrop,
+      keyboard: false,
+      show: false
+    });
+
+    if (options.show) {
+      dialog.modal('show');
+    }
+
+    return dialog;
+  };
+
+
+  // Helper function to simulate the native alert() behavior. **NOTE**: This is non-blocking, so any
+  // code that must happen after the alert is dismissed should be placed within the callback function 
+  // for this alert.
+  exports.alert = function () {
+    var options;
+
+    options = mergeDialogOptions('alert', ['ok'], ['message', 'callback'], arguments);
+
+    // @TODO: can this move inside exports.dialog when we're iterating over each
+    // button and checking its button.callback value instead?
+    if (options.callback && !$.isFunction(options.callback)) {
+      throw new Error('alert requires the "callback" property to be a function when provided');
+    }
+
+    // override the ok and escape callback to make sure they just invoke
+    // the single user-supplied one (if provided)
+    options.buttons.ok.callback = options.onEscape = function () {
+      if ($.isFunction(options.callback)) {
+        return options.callback.call(this);
+      }
+
+      return true;
+    };
+
+    return exports.dialog(options);
+  };
+
+
+  // Helper function to simulate the native confirm() behavior. **NOTE**: This is non-blocking, so any
+  // code that must happen after the confirm is dismissed should be placed within the callback function 
+  // for this confirm.
+  exports.confirm = function () {
+    var options;
+
+    options = mergeDialogOptions('confirm', ['cancel', 'confirm'], ['message', 'callback'], arguments);
+
+    // confirm specific validation; they don't make sense without a callback so make
+    // sure it's present
+    if (!$.isFunction(options.callback)) {
+      throw new Error('confirm requires a callback');
+    }
+
+    // overrides; undo anything the user tried to set they shouldn't have
+    options.buttons.cancel.callback = options.onEscape = function () {
+      return options.callback.call(this, false);
+    };
+
+    options.buttons.confirm.callback = function () {
+      return options.callback.call(this, true);
+    };
+
+    return exports.dialog(options);
+  };
+
+
+  // Helper function to simulate the native prompt() behavior. **NOTE**: This is non-blocking, so any
+  // code that must happen after the prompt is dismissed should be placed within the callback function 
+  // for this prompt.
+  exports.prompt = function () {
+    var options;
+    var promptDialog;
+    var form;
+    var input;
+    var shouldShow;
+    var inputOptions;
+
+    // we have to create our form first otherwise
+    // its value is undefined when gearing up our options
+    // @TODO this could be solved by allowing message to
+    // be a function instead...
+    form = $(templates.form);
+
+    // prompt defaults are more complex than others in that
+    // users can override more defaults
+    options = mergeDialogOptions('prompt', ['cancel', 'confirm'], ['title', 'callback'], arguments);
+
+    if (!options.value) {
+      options.value = defaults.value;
+    }
+
+    if (!options.inputType) {
+      options.inputType = defaults.inputType;
+    }
+
+    // capture the user's show value; we always set this to false before
+    // spawning the dialog to give us a chance to attach some handlers to
+    // it, but we need to make sure we respect a preference not to show it
+    shouldShow = (options.show === undefined) ? defaults.show : options.show;
+
+    // This is required prior to calling the dialog builder below - we need to 
+    // add an event handler just before the prompt is shown
+    options.show = false;
+
+    // Handles the 'cancel' action
+    options.buttons.cancel.callback = options.onEscape = function () {
+      return options.callback.call(this, null);
+    };
+
+    // Prompt submitted - extract the prompt value. This requires a bit of work, 
+    // given the different input types available.
+    options.buttons.confirm.callback = function () {
+      var value;
+
+      if (options.inputType === 'checkbox') {
+        value = input.find('input:checked').map(function () {
+          return $(this).val();
+        }).get();
+      } else if (options.inputType === 'radio') {
+        value = input.find('input:checked').val();
+      }
+      else {
+        if (input[0].checkValidity && !input[0].checkValidity()) {
+          // prevents button callback from being called
+          return false;
+        } else {
+          if (options.inputType === 'select' && options.multiple === true) {
+            value = input.find('option:selected').map(function () {
+              return $(this).val();
+            }).get();
+          }
+          else {
+            value = input.val();
+          }
+        }
+      }
+
+      return options.callback.call(this, value);
+    };
+
+    // prompt-specific validation
+    if (!options.title) {
+      throw new Error('prompt requires a title');
+    }
+
+    if (!$.isFunction(options.callback)) {
+      throw new Error('prompt requires a callback');
+    }
+
+    if (!templates.inputs[options.inputType]) {
+      throw new Error('Invalid prompt type');
+    }
+
+    // create the input based on the supplied type
+    input = $(templates.inputs[options.inputType]);
+
+    switch (options.inputType) {
+      case 'text':
+      case 'textarea':
+      case 'email':
+      case 'password':
+        input.val(options.value);
+
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+
+        if (options.pattern) {
+          input.attr('pattern', options.pattern);
+        }
+
+        if (options.maxlength) {
+          input.attr('maxlength', options.maxlength);
+        }
+
+        if (options.required) {
+          input.prop({ 'required': true });
+        }
+
+        if (options.rows && !isNaN(parseInt(options.rows))) {
+          if (options.inputType === 'textarea') {
+            input.attr({ 'rows': options.rows });
+          }
+        }
+
+        break;
+
+
+      case 'date':
+      case 'time':
+      case 'number':
+      case 'range':
+        input.val(options.value);
+
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+
+        if (options.pattern) {
+          input.attr('pattern', options.pattern);
+        }
+
+        if (options.required) {
+          input.prop({ 'required': true });
+        }
+
+        // These input types have extra attributes which affect their input validation.
+        // Warning: For most browsers, date inputs are buggy in their implementation of 'step', so 
+        // this attribute will have no effect. Therefore, we don't set the attribute for date inputs.
+        // @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Setting_maximum_and_minimum_dates
+        if (options.inputType !== 'date') {
+          if (options.step) {
+            if (options.step === 'any' || (!isNaN(options.step) && parseFloat(options.step) > 0)) {
+              input.attr('step', options.step);
+            }
+            else {
+              throw new Error('"step" must be a valid positive number or the value "any". See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-step for more information.');
+            }
+          }
+        }
+
+        if (minAndMaxAreValid(options.inputType, options.min, options.max)) {
+          if (options.min !== undefined) {
+            input.attr('min', options.min);
+          }
+          if (options.max !== undefined) {
+            input.attr('max', options.max);
+          }
+        }
+
+        break;
+
+
+      case 'select':
+        var groups = {};
+        inputOptions = options.inputOptions || [];
+
+        if (!$.isArray(inputOptions)) {
+          throw new Error('Please pass an array of input options');
+        }
+
+        if (!inputOptions.length) {
+          throw new Error('prompt with "inputType" set to "select" requires at least one option');
+        }
+
+        // placeholder is not actually a valid attribute for select,
+        // but we'll allow it, assuming it might be used for a plugin
+        if (options.placeholder) {
+          input.attr('placeholder', options.placeholder);
+        }
+
+        if (options.required) {
+          input.prop({ 'required': true });
+        }
+
+        if (options.multiple) {
+          input.prop({ 'multiple': true });
+        }
+
+        each(inputOptions, function (_, option) {
+          // assume the element to attach to is the input...
+          var elem = input;
+
+          if (option.value === undefined || option.text === undefined) {
+            throw new Error('each option needs a "value" property and a "text" property');
+          }
+
+          // ... but override that element if this option sits in a group
+
+          if (option.group) {
+            // initialise group if necessary
+            if (!groups[option.group]) {
+              groups[option.group] = $('<optgroup />').attr('label', option.group);
+            }
+
+            elem = groups[option.group];
+          }
+
+          var o = $(templates.option);
+          o.attr('value', option.value).text(option.text);
+          elem.append(o);
+        });
+
+        each(groups, function (_, group) {
+          input.append(group);
+        });
+
+        // safe to set a select's value as per a normal input
+        input.val(options.value);
+
+        break;
+
+
+      case 'checkbox':
+        var checkboxValues = $.isArray(options.value) ? options.value : [options.value];
+        inputOptions = options.inputOptions || [];
+
+        if (!inputOptions.length) {
+          throw new Error('prompt with "inputType" set to "checkbox" requires at least one option');
+        }
+
+        // checkboxes have to nest within a containing element, so
+        // they break the rules a bit and we end up re-assigning
+        // our 'input' element to this container instead
+        input = $('<div class="bootbox-checkbox-list"></div>');
+
+        each(inputOptions, function (_, option) {
+          if (option.value === undefined || option.text === undefined) {
+            throw new Error('each option needs a "value" property and a "text" property');
+          }
+
+          var checkbox = $(templates.inputs[options.inputType]);
+
+          checkbox.find('input').attr('value', option.value);
+          checkbox.find('label').append('\n' + option.text);
+
+          // we've ensured values is an array so we can always iterate over it
+          each(checkboxValues, function (_, value) {
+            if (value === option.value) {
+              checkbox.find('input').prop('checked', true);
+            }
+          });
+
+          input.append(checkbox);
+        });
+        break;
+
+
+      case 'radio':
+        // Make sure that value is not an array (only a single radio can ever be checked)
+        if (options.value !== undefined && $.isArray(options.value)) {
+          throw new Error('prompt with "inputType" set to "radio" requires a single, non-array value for "value"');
+        }
+
+        inputOptions = options.inputOptions || [];
+
+        if (!inputOptions.length) {
+          throw new Error('prompt with "inputType" set to "radio" requires at least one option');
+        }
+
+        // Radiobuttons have to nest within a containing element, so
+        // they break the rules a bit and we end up re-assigning
+        // our 'input' element to this container instead
+        input = $('<div class="bootbox-radiobutton-list"></div>');
+
+        // Radiobuttons should always have an initial checked input checked in a "group".
+        // If value is undefined or doesn't match an input option, select the first radiobutton
+        var checkFirstRadio = true;
+
+        each(inputOptions, function (_, option) {
+          if (option.value === undefined || option.text === undefined) {
+            throw new Error('each option needs a "value" property and a "text" property');
+          }
+
+          var radio = $(templates.inputs[options.inputType]);
+
+          radio.find('input').attr('value', option.value);
+          radio.find('label').append('\n' + option.text);
+
+          if (options.value !== undefined) {
+            if (option.value === options.value) {
+              radio.find('input').prop('checked', true);
+              checkFirstRadio = false;
+            }
+          }
+
+          input.append(radio);
+        });
+
+        if (checkFirstRadio) {
+          input.find('input[type="radio"]').first().prop('checked', true);
+        }
+        break;
+    }
+
+    // now place it in our form
+    form.append(input);
+
+    form.on('submit', function (e) {
+      e.preventDefault();
+      // Fix for SammyJS (or similar JS routing library) hijacking the form post.
+      e.stopPropagation();
+
+      // @TODO can we actually click *the* button object instead?
+      // e.g. buttons.confirm.click() or similar
+      promptDialog.find('.bootbox-accept').trigger('click');
+    });
+
+    if ($.trim(options.message) !== '') {
+      // Add the form to whatever content the user may have added.
+      var message = $(templates.promptMessage).html(options.message);
+      form.prepend(message);
+      options.message = form;
+    }
+    else {
+      options.message = form;
+    }
+
+    // Generate the dialog
+    promptDialog = exports.dialog(options);
+
+    // clear the existing handler focusing the submit button...
+    promptDialog.off('shown.bs.modal', focusPrimaryButton);
+
+    // ...and replace it with one focusing our input, if possible
+    promptDialog.on('shown.bs.modal', function () {
+      // need the closure here since input isn't
+      // an object otherwise
+      input.focus();
+    });
+
+    if (shouldShow === true) {
+      promptDialog.modal('show');
+    }
+
+    return promptDialog;
+  };
+
+
+  // INTERNAL FUNCTIONS
+  // *************************************************************************************************************
+
+  // Map a flexible set of arguments into a single returned object
+  // If args.length is already one just return it, otherwise
+  // use the properties argument to map the unnamed args to
+  // object properties.
+  // So in the latter case:
+  //  mapArguments(["foo", $.noop], ["message", "callback"])
+  //  -> { message: "foo", callback: $.noop }
+  function mapArguments(args, properties) {
+    var argn = args.length;
+    var options = {};
+
+    if (argn < 1 || argn > 2) {
+      throw new Error('Invalid argument length');
+    }
+
+    if (argn === 2 || typeof args[0] === 'string') {
+      options[properties[0]] = args[0];
+      options[properties[1]] = args[1];
+    } else {
+      options = args[0];
+    }
+
+    return options;
+  }
+
+
+  //  Merge a set of default dialog options with user supplied arguments
+  function mergeArguments(defaults, args, properties) {
+    return $.extend(
+      // deep merge
+      true,
+      // ensure the target is an empty, unreferenced object
+      {},
+      // the base options object for this type of dialog (often just buttons)
+      defaults,
+      // args could be an object or array; if it's an array properties will
+      // map it to a proper options object
+      mapArguments(
+        args,
+        properties
+      )
+    );
+  }
+
+
+  //  This entry-level method makes heavy use of composition to take a simple
+  //  range of inputs and return valid options suitable for passing to bootbox.dialog
+  function mergeDialogOptions(className, labels, properties, args) {
+    var locale;
+    if (args && args[0]) {
+      locale = args[0].locale || defaults.locale;
+      var swapButtons = args[0].swapButtonOrder || defaults.swapButtonOrder;
+
+      if (swapButtons) {
+        labels = labels.reverse();
+      }
+    }
+
+    //  build up a base set of dialog properties
+    var baseOptions = {
+      className: 'bootbox-' + className,
+      buttons: createLabels(labels, locale)
+    };
+
+    // Ensure the buttons properties generated, *after* merging
+    // with user args are still valid against the supplied labels
+    return validateButtons(
+      // merge the generated base properties with user supplied arguments
+      mergeArguments(
+        baseOptions,
+        args,
+        // if args.length > 1, properties specify how each arg maps to an object key
+        properties
+      ),
+      labels
+    );
+  }
+
+
+  //  Checks each button object to see if key is valid. 
+  //  This function will only be called by the alert, confirm, and prompt helpers. 
+  function validateButtons(options, buttons) {
+    var allowedButtons = {};
+    each(buttons, function (key, value) {
+      allowedButtons[value] = true;
+    });
+
+    each(options.buttons, function (key) {
+      if (allowedButtons[key] === undefined) {
+        throw new Error('button key "' + key + '" is not allowed (options are ' + buttons.join(' ') + ')');
+      }
+    });
+
+    return options;
+  }
+
+
+
+  //  From a given list of arguments, return a suitable object of button labels.
+  //  All this does is normalise the given labels and translate them where possible.
+  //  e.g. "ok", "confirm" -> { ok: "OK", cancel: "Annuleren" }
+  function createLabels(labels, locale) {
+    var buttons = {};
+
+    for (var i = 0, j = labels.length; i < j; i++) {
+      var argument = labels[i];
+      var key = argument.toLowerCase();
+      var value = argument.toUpperCase();
+
+      buttons[key] = {
+        label: getText(value, locale)
+      };
+    }
+
+    return buttons;
+  }
+
+
+
+  //  Get localized text from a locale. Defaults to 'en' locale if no locale 
+  //  provided or a non-registered locale is requested
+  function getText(key, locale) {
+    var labels = locales[locale];
+
+    return labels ? labels[key] : locales.en[key];
+  }
+
+
+
+  //  Filter and tidy up any user supplied parameters to this dialog.
+  //  Also looks for any shorthands used and ensures that the options
+  //  which are returned are all normalized properly
+  function sanitize(options) {
+    var buttons;
+    var total;
+
+    if (typeof options !== 'object') {
+      throw new Error('Please supply an object of options');
+    }
+
+    if (!options.message) {
+      throw new Error('"message" option must not be null or an empty string.');
+    }
+
+    // make sure any supplied options take precedence over defaults
+    options = $.extend({}, defaults, options);
+
+    //make sure backdrop is either true, false, or 'static'
+    if (!options.backdrop) {
+      options.backdrop = (options.backdrop === false || options.backdrop === 0) ? false : 'static';
+    } else {
+      options.backdrop = typeof options.backdrop === 'string' && options.backdrop.toLowerCase() === 'static' ? 'static' : true;
+    } 
+
+    // no buttons is still a valid dialog but it's cleaner to always have
+    // a buttons object to iterate over, even if it's empty
+    if (!options.buttons) {
+      options.buttons = {};
+    }
+    
+    buttons = options.buttons;
+
+    total = getKeyLength(buttons);
+
+    each(buttons, function (key, button, index) {
+      if ($.isFunction(button)) {
+        // short form, assume value is our callback. Since button
+        // isn't an object it isn't a reference either so re-assign it
+        button = buttons[key] = {
+          callback: button
+        };
+      }
+
+      // before any further checks make sure by now button is the correct type
+      if ($.type(button) !== 'object') {
+        throw new Error('button with key "' + key + '" must be an object');
+      }
+
+      if (!button.label) {
+        // the lack of an explicit label means we'll assume the key is good enough
+        button.label = key;
+      }
+
+      if (!button.className) {
+        var isPrimary = false;
+        if (options.swapButtonOrder) {
+          isPrimary = index === 0;
+        }
+        else {
+          isPrimary = index === total - 1;
+        }
+
+        if (total <= 2 && isPrimary) {
+          // always add a primary to the main option in a one or two-button dialog
+          button.className = 'btn-primary';
+        } else {
+          // adding both classes allows us to target both BS3 and BS4 without needing to check the version
+          button.className = 'btn-secondary btn-default';
+        }
+      }
+    });
+
+    return options;
+  }
+
+
+  //  Returns a count of the properties defined on the object
+  function getKeyLength(obj) {
+    return Object.keys(obj).length;
+  }
+
+
+  //  Tiny wrapper function around jQuery.each; just adds index as the third parameter
+  function each(collection, iterator) {
+    var index = 0;
+    $.each(collection, function (key, value) {
+      iterator(key, value, index++);
+    });
+  }
+
+
+  function focusPrimaryButton(e) {
+    e.data.dialog.find('.bootbox-accept').first().trigger('focus');
+  }
+
+
+  function destroyModal(e) {
+    // ensure we don't accidentally intercept hidden events triggered
+    // by children of the current dialog. We shouldn't need to handle this anymore, 
+    // now that Bootstrap namespaces its events, but still worth doing.
+    if (e.target === e.data.dialog[0]) {
+      e.data.dialog.remove();
+    }
+  }
+
+
+  function unbindModal(e) {
+    if (e.target === e.data.dialog[0]) {
+      e.data.dialog.off('escape.close.bb');
+      e.data.dialog.off('click');
+    }
+  }
+
+
+  //  Handle the invoked dialog callback
+  function processCallback(e, dialog, callback) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    // by default we assume a callback will get rid of the dialog,
+    // although it is given the opportunity to override this
+
+    // so, if the callback can be invoked and it *explicitly returns false*
+    // then we'll set a flag to keep the dialog active...
+    var preserveDialog = $.isFunction(callback) && callback.call(dialog, e) === false;
+
+    // ... otherwise we'll bin it
+    if (!preserveDialog) {
+      dialog.modal('hide');
+    }
+  }
+
+  // Validate `min` and `max` values based on the current `inputType` value
+  function minAndMaxAreValid(type, min, max) {
+    var result = false;
+    var minValid = true;
+    var maxValid = true;
+
+    if (type === 'date') {
+      if (min !== undefined && !(minValid = dateIsValid(min))) {
+        console.warn('Browsers which natively support the "date" input type expect date values to be of the form "YYYY-MM-DD" (see ISO-8601 https://www.iso.org/iso-8601-date-and-time-format.html). Bootbox does not enforce this rule, but your min value may not be enforced by this browser.');
+      }
+      else if (max !== undefined && !(maxValid = dateIsValid(max))) {
+        console.warn('Browsers which natively support the "date" input type expect date values to be of the form "YYYY-MM-DD" (see ISO-8601 https://www.iso.org/iso-8601-date-and-time-format.html). Bootbox does not enforce this rule, but your max value may not be enforced by this browser.');
+      }
+    }
+    else if (type === 'time') {
+      if (min !== undefined && !(minValid = timeIsValid(min))) {
+        throw new Error('"min" is not a valid time. See https://www.w3.org/TR/2012/WD-html-markup-20120315/datatypes.html#form.data.time for more information.');
+      }
+      else if (max !== undefined && !(maxValid = timeIsValid(max))) {
+        throw new Error('"max" is not a valid time. See https://www.w3.org/TR/2012/WD-html-markup-20120315/datatypes.html#form.data.time for more information.');
+      }
+    }
+    else {
+      if (min !== undefined && isNaN(min)) {
+        minValid = false;
+        throw new Error('"min" must be a valid number. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-min for more information.');
+      }
+
+      if (max !== undefined && isNaN(max)) {
+        maxValid = false;
+        throw new Error('"max" must be a valid number. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-max for more information.');
+      }
+    }
+
+    if (minValid && maxValid) {
+      if (max <= min) {
+        throw new Error('"max" must be greater than "min". See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-max for more information.');
+      }
+      else {
+        result = true;
+      }
+    }
+
+    return result;
+  }
+
+  function timeIsValid(value) {
+    return /([01][0-9]|2[0-3]):[0-5][0-9]?:[0-5][0-9]/.test(value);
+  }
+
+  function dateIsValid(value) {
+    return /(\d{4})-(\d{2})-(\d{2})/.test(value);
+  }
+
+  //  The Bootbox object
+  return exports;
+}));
 
 /***/ }),
 
@@ -10647,106 +11818,6 @@ defineJQueryPlugin(Toast);
 
 //# sourceMappingURL=bootstrap.esm.js.map
 
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.task_board {\n    background-color: white;\n    border-radius: 1.5rem;\n    height: 80%;\n}\n.drop-zone {\n    background: bisque;\n    width: 50%;\n    border-radius: 1.2rem;\n    box-shadow: 0 0.1rem 0.2rem 0 orange;\n    padding: 10px;\n    margin: 5px;\n    min-height: 10px;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n}\n.placeholder {\n    background: yellow;\n    border-radius: 1.2rem;\n}\n.drag-el {\n    cursor:pointer;\n    color: white;\n    padding: 5px 10px;\n    margin: 2px;\n    border-radius: 1.2rem;\n}\ndrag-el:nth-last-of-type(1) {\n    margin-bottom: 0;\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
 
 /***/ }),
 
@@ -41688,1386 +42759,6 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
-
-
-/***/ }),
-
-/***/ "./node_modules/smooth-dnd/dist/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/smooth-dnd/dist/index.js ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, exports) {
-
-!function(e,t){ true?t(exports):0}(this,function(e){"use strict";var l,t,r="smooth-dnd-container-instance",f="smooth-dnd-draggable-wrapper",o="animated",p="__smooth_dnd_draggable_translation_value",u="__smooth_dnd_draggable_visibility_value",v="smooth-dnd-ghost",g="smooth-dnd-container",d="smooth-dnd-extra-size-for-insertion",h="smooth-dnd-stretcher-element",y="smooth-dnd-stretcher-instance",s="smooth-dnd-disable-touch-action",c="smooth-dnd-no-user-select",i="smooth-dnd-prevent-auto-scroll-class",b="smooth-dnd-drop-preview-default-class",w="smooth-dnd-drop-preview-inner-class",x="smooth-dnd-drop-preview-constant-class",E="smooth-dnd-drop-preview-flex-container-class",n=Object.freeze({containerInstance:r,defaultGroupName:"@@smooth-dnd-default-group@@",wrapperClass:f,defaultGrabHandleClass:"smooth-dnd-default-grap-handle",animationClass:o,translationValue:p,visibilityValue:u,ghostClass:v,containerClass:g,extraSizeForInsertion:d,stretcherElementClass:h,stretcherElementInstance:y,isDraggableDetached:"smoth-dnd-is-draggable-detached",disbaleTouchActions:s,noUserSelectClass:c,preventAutoScrollClass:i,dropPlaceholderDefaultClass:b,dropPlaceholderInnerClass:w,dropPlaceholderWrapperClass:x,dropPlaceholderFlexContainerClass:E}),C={groupName:void 0,behaviour:"move",orientation:"vertical",getChildPayload:void 0,animationDuration:250,autoScrollEnabled:!0,shouldAcceptDrop:void 0,shouldAnimateDrop:void 0};function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function m(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function D(e){return function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}(t=l||(l={})).x="x",t.y="y",t.xy="xy";function S(e,t,n){return"x"===n?{left:Math.max(e.left,t.left),top:e.top,right:Math.min(e.right,t.right),bottom:e.bottom}:{left:e.left,top:Math.max(e.top,t.top),right:e.right,bottom:Math.min(e.bottom,t.bottom)}}function O(e){var t=window.getComputedStyle(e),n=t.overflow;if("auto"===n||"scroll"===n)return l.xy;var o=t["overflow-x"],r="auto"===o||"scroll"===o,i=t["overflow-y"],a="auto"===i||"scroll"===i;return r&&a?l.xy:r?l.x:a?l.y:null}function R(e,t){var n=window.getComputedStyle(e),o=n.overflow,r=n["overflow-".concat(t)];return"auto"===o||"scroll"===o||("auto"===r||"scroll"===r)}var A=function(e,t){return{left:Math.max(e.left,t.left),top:Math.max(e.top,t.top),right:Math.min(e.right,t.right),bottom:Math.min(e.bottom,t.bottom)}},I=function(e){var t=e.getBoundingClientRect(),n={left:t.left,right:t.right,top:t.top,bottom:t.bottom};if(P(e,"x")&&!B(e,"x")){var o=n.right-n.left;n.right=n.right+e.scrollWidth-o}if(P(e,"y")&&!B(e,"y")){var r=n.bottom-n.top;n.bottom=n.bottom+e.scrollHeight-r}return n},B=function(e,t){var n=window.getComputedStyle(e),o=n.overflow,r=n["overflow-".concat(t)];return"auto"===o||"scroll"===o||"hidden"===o||("auto"===r||"scroll"===r||"hidden"===r)},P=function(e,t){return"x"===t?e.scrollWidth>e.clientWidth:e.scrollHeight>e.clientHeight},T=function(e,t){var n=e,o=t||I(e);for(n=e.parentElement;n;)P(n,"x")&&B(n,"x")&&(o=S(o,n.getBoundingClientRect(),"x")),P(n,"y")&&B(n,"y")&&(o=S(o,n.getBoundingClientRect(),"y")),n=n.parentElement;return o},z=function(e,n){for(var o=e;o;){if(o[r]){var t=function(){var t=o[r];if(n.some(function(e){return e===t}))return{v:t}}();if("object"===a(t))return t.v}o=o.parentElement}return null},N=function(e,t){for(var n=e;n;){if(n.matches(t))return n;n=n.parentElement}return null},L=function(e,t){return-1<e.className.split(" ").map(function(e){return e}).indexOf(t)},M=function(e,t){if(e){var n=e.className.split(" ").filter(function(e){return e});-1===n.indexOf(t)&&(n.unshift(t),e.className=n.join(" "))}},j=function(e,t){if(e){var n=e.className.split(" ").filter(function(e){return e&&e!==t});e.className=n.join(" ")}},_=function(e,t){return e.removeChild(e.children[t])},F=function(e,t,n){n>=e.children.length?e.appendChild(t):e.insertBefore(t,e.children[n])},V=function(){window.getSelection?window.getSelection().empty?window.getSelection().empty():window.getSelection().removeAllRanges&&window.getSelection().removeAllRanges():window.document.selection&&window.document.selection.empty()},X=function(e){if(e){var t=window.getComputedStyle(e);if(t)return t.cursor}return null};function H(e){return!(e.bottom<=e.top||e.right<=e.left)}function Y(e){var s=e.element,c=e.draggables;return function(e,t){var n=e,o=n.removedIndex,r=n.addedIndex,i=n.droppedElement,a=null;if(null!==o&&(a=_(s,o),c.splice(o,1)),null!==r){var l=window.document.createElement("div");l.className="".concat(f),l.appendChild(a&&a.firstElementChild?a.firstElementChild:i),F(s,l,r),r>=c.length?c.push(l):c.splice(r,0,l)}t&&t(e)}}var k=Object.freeze({domDropHandler:Y,reactDropHandler:function(){return{handler:function(){return function(e,t){t&&t(e)}}}}}),G={size:"offsetWidth",distanceToParent:"offsetLeft",translate:"transform",begin:"left",end:"right",dragPosition:"x",scrollSize:"scrollWidth",offsetSize:"offsetWidth",scrollValue:"scrollLeft",scale:"scaleX",setSize:"width",setters:{translate:function(e){return"translate3d(".concat(e,"px, 0, 0)")}}},W={size:"offsetHeight",distanceToParent:"offsetTop",translate:"transform",begin:"top",end:"bottom",dragPosition:"y",scrollSize:"scrollHeight",offsetSize:"offsetHeight",scrollValue:"scrollTop",scale:"scaleY",setSize:"height",setters:{translate:function(e){return"translate3d(0,".concat(e,"px, 0)")}}};function q(n,s,e){n[d]=0;var o=function(o){return{get:function(e,t){return e[o[t]||t]},set:function(e,t,n){e[o[t]]=o.setters[t]?o.setters[t](n):n}}}("horizontal"===s?G:W),c={translation:0};function t(){r(n),function(e){var t=e.getBoundingClientRect();c.scaleX=e.offsetWidth?(t.right-t.left)/e.offsetWidth:1,c.scaleY=e.offsetHeight?(t.bottom-t.top)/e.offsetHeight:1}(n)}function r(e){c.rect=I(e);var t=T(e,c.rect);H(t)&&(c.lastVisibleRect=c.visibleRect),c.visibleRect=t}function i(e){var t=e;if(t.tagName){var n=t.getBoundingClientRect();return"vertical"===s?n.bottom-n.top:n.right-n.left}return o.get(e,"size")*o.get(c,"scale")}function a(e){return o.get(e,"dragPosition")}return window.addEventListener("resize",function(){r(n)}),setTimeout(function(){t()},10),{getSize:i,getContainerRectangles:function(){return{rect:c.rect,visibleRect:c.visibleRect,lastVisibleRect:c.lastVisibleRect}},getBeginEndOfDOMRect:function(e){return{begin:o.get(e,"begin"),end:o.get(e,"end")}},getBeginEndOfContainer:function(){return{begin:o.get(c.rect,"begin")+c.translation,end:o.get(c.rect,"end")+c.translation}},getBeginEndOfContainerVisibleRect:function(){return{begin:o.get(c.visibleRect,"begin")+c.translation,end:o.get(c.visibleRect,"end")+c.translation}},getBeginEnd:function(e){var t=function(e){return(o.get(e,"distanceToParent")+(e[p]||0))*o.get(c,"scale")}(e)+(o.get(c.rect,"begin")+c.translation)-o.get(n,"scrollValue");return{begin:t,end:t+i(e)*o.get(c,"scale")}},getAxisValue:a,setTranslation:function(e,t){t?o.set(e.style,"translate",t):e.style.removeProperty("transform"),e[p]=t},getTranslation:function(e){return e[p]},setVisibility:function(e,t){void 0!==e[u]&&e[u]===t||(t?e.style.removeProperty("visibility"):e.style.visibility="hidden",e[u]=t)},isVisible:function(e){return void 0===e[u]||e[u]},isInVisibleRect:function(e,t){var n=c.visibleRect,o=n.left,r=n.top,i=n.right,a=n.bottom;a-r<2&&(a=r+30);var l=c.rect;return"vertical"===s?e>l.left&&e<l.right&&r<t&&t<a:o<e&&e<i&&t>l.top&&t<l.bottom},setSize:function(e,t){o.set(e,"setSize",t)},getTopLeftOfElementBegin:function(e){var t=0;return{top:"horizontal"===s?(t=e,c.rect.top):(t=c.rect.left,e),left:t}},getScrollSize:function(e){return o.get(e,"scrollSize")},getScrollValue:function(e){return o.get(e,"scrollValue")},setScrollValue:function(e,t){return o.set(e,"scrollValue",t)},invalidate:t,invalidateRects:function(){r(n)},getPosition:function(e){return a(e)},setBegin:function(e,t){o.set(e,"begin",t)}}}function U(e,t,n){var o,r,i,a=n.left,l=n.right,s=n.top,c=n.bottom,u=e.x,d=e.y;if(u<a||l<u||d<s||c<d)return null;i="x"===t?(o=a,r=l,u):(o=s,r=c,d);var f=r-o,g=400<f?100:f/4;return r-i<g?{direction:"end",speedFactor:(g-(r-i))/g}:i-o<g?{direction:"begin",speedFactor:(g-(i-o))/g}:null}function J(l){var s=1<arguments.length&&void 0!==arguments[1]?arguments[1]:"y",c=null,u=null,d=null,f=null;return{animate:function(e,t){d=e,f=t,function a(){null===c&&(c=requestAnimationFrame(function(e){null===u&&(u=e);var t=e-u;u=e;var n,o,r,i=t/1e3*f;o=s,r=i="begin"===d?0-i:i,(n=l)&&(n!==window?"x"===o?n.scrollLeft+=r:n.scrollTop+=r:"x"===o?n.scrollBy(r,0):n.scrollBy(0,r)),c=null,a()}))}()},stop:function(){null!==c&&(cancelAnimationFrame(c),c=null),u=null}}}function K(e){return function(){return T(e,e.getBoundingClientRect())}}var Q,Z,$,ee=function(e){var u=1<arguments.length&&void 0!==arguments[1]?arguments[1]:1500,r=e.reduce(function(e,t){var n=function(e){for(var t=[],n=e.element;n;){var o=O(n);if(o&&!L(n,i)){var r={};switch(o){case l.xy:r.x={animator:J(n,"x")},r.y={animator:J(n,"y")};break;case l.x:r.x={animator:J(n,"x")};break;case l.y:r.y={animator:J(n,"y")}}t.push({axisAnimations:r,getRect:K(n),scrollerElement:n})}n=n.parentElement}return t}(t).filter(function(t){return!e.find(function(e){return e.scrollerElement===t.scrollerElement})});return[].concat(D(e),D(n))},[]);return function(e){var t=e.draggableInfo;if(e.reset)r.forEach(function(e){e.axisAnimations.x&&e.axisAnimations.x.animator.stop(),e.axisAnimations.y&&e.axisAnimations.y.animator.stop()});else if(t){!function(e,o){e.forEach(function(e){var t=e.axisAnimations,n=(0,e.getRect)();t.x&&(t.x.scrollParams=U(o,"x",n),e.cachedRect=n),t.y&&(t.y.scrollParams=U(o,"y",n),e.cachedRect=n)})}(r,t.mousePosition),r.forEach(function(e){var t=e.axisAnimations,n=t.x,o=t.y;if(n)if(n.scrollParams){var r=n.scrollParams,i=r.direction,a=r.speedFactor;n.animator.animate(i,a*u)}else n.animator.stop();if(o)if(o.scrollParams){var l=o.scrollParams,s=l.direction,c=l.speedFactor;o.animator.animate(s,c*u)}else o.animator.stop()});var n=r.filter(function(e){return e.cachedRect});if(n.length&&1<n.length){var o=function(e,t){for(var n=document.elementFromPoint(t.x,t.y);n;){var o=e.find(function(e){return e.scrollerElement===n});if(o)return o;n=n.parentElement}return null}(n,t.mousePosition);o&&n.forEach(function(e){e!==o&&(e.axisAnimations.x&&e.axisAnimations.x.animator.stop(),e.axisAnimations.y&&e.axisAnimations.y.animator.stop())})}}}};"undefined"!=typeof window&&((Q=Element)&&Q.prototype&&!Q.prototype.matches&&(Q.prototype.matches=Q.prototype.matchesSelector||Q.prototype.mozMatchesSelector||Q.prototype.msMatchesSelector||Q.prototype.oMatchesSelector||Q.prototype.webkitMatchesSelector||function(e){for(var t=(this.document||this.ownerDocument).querySelectorAll(e),n=t.length;0<=--n&&t.item(n)!==this;);return-1<n}),(Z=Node||Element)&&Z.prototype&&null==Z.prototype.firstElementChild&&Object.defineProperty(Z.prototype,"firstElementChild",{get:function(){for(var e,t=this.childNodes,n=0;e=t[n++];)if(1===e.nodeType)return e;return null}}),Array.prototype.some||(Array.prototype.some=function(e){if(null==this)throw new TypeError("Array.prototype.some called on null or undefined");if("function"!=typeof e)throw new TypeError;for(var t=Object(this),n=t.length>>>0,o=2<=arguments.length?arguments[1]:void 0,r=0;r<n;r++)if(r in t&&e.call(o,t[r],r,t))return!0;return!1}));var te={overflow:"hidden",display:"block"},ne={height:"100%",display:"table-cell","vertical-align":"top"},oe=(m($={},".".concat(g),{position:"relative","min-height":"30px","min-width":"30px"}),m($,".".concat(g,".horizontal"),{display:"table"}),m($,".".concat(g,".horizontal > .").concat(h),{display:"inline-block"}),m($,".".concat(g,".horizontal > .").concat(f),ne),m($,".".concat(g,".vertical > .").concat(f),te),m($,".".concat(f),{"box-sizing":"border-box"}),m($,".".concat(f,".horizontal"),ne),m($,".".concat(f,".vertical"),te),m($,".".concat(f,".animated"),{transition:"transform ease"}),m($,".".concat(v),{"box-sizing":"border-box"}),m($,".".concat(v,".animated"),{transition:"all ease-in-out"}),m($,".".concat(v," *"),{"pointer-events":"none"}),m($,".".concat(s," *"),{"touch-action":"none","-ms-touch-action":"none"}),m($,".".concat(c),{"-webkit-touch-callout":"none","-webkit-user-select":"none","-khtml-user-select":"none","-moz-user-select":"none","-ms-user-select":"none","user-select":"none"}),m($,".".concat(w),{flex:"1"}),m($,".".concat(g,".horizontal > .").concat(x),{height:"100%",overflow:"hidden",display:"table-cell","vertical-align":"top"}),m($,".".concat(g,".vertical > .").concat(x),{overflow:"hidden",display:"block",width:"100%"}),m($,".".concat(E),{width:"100%",height:"100%",display:"flex","justify-content":"stretch","align-items":"stretch"}),m($,".".concat(b),{"background-color":"rgba(150, 150, 150, 0.1)",border:"1px solid #ccc"}),$);function re(o){return Object.keys(o).reduce(function(e,t){var n=o[t];return"object"===a(n)?"".concat(e).concat(t,"{").concat(re(n),"}"):"".concat(e).concat(t,":").concat(n,";")},"")}function ie(e){if(e&&"undefined"!=typeof window){var t=window.document.head||window.document.getElementsByTagName("head")[0],n=window.document.createElement("style"),o=re({"body *":{cursor:"".concat(e," !important")}});return n.type="text/css",n.styleSheet?n.styleSheet.cssText=o:n.appendChild(window.document.createTextNode(o)),t.appendChild(n),n}return null}var ae,le,se=["mousedown","touchstart"],ce=["mousemove","touchmove"],ue=["mouseup","touchend"],de=null,fe=null,ge=null,me=null,pe=[],ve=!1,he=!1,ye=!1,be=!1,we=null,xe=null,Ee=null,Ce=null,De=(ae=null,le=!1,{start:function(){le||(le=!0,function e(){ae=requestAnimationFrame(function(){de.forEach(function(e){return e.layout.invalidateRects()}),setTimeout(function(){null!==ae&&e()},50)})}())},stop:function(){null!==ae&&(cancelAnimationFrame(ae),ae=null),le=!1}}),Se="undefined"!=typeof window&&!!(window.navigator.userAgent.match(/Android/i)||window.navigator.userAgent.match(/webOS/i)||window.navigator.userAgent.match(/iPhone/i)||window.navigator.userAgent.match(/iPad/i)||window.navigator.userAgent.match(/iPod/i)||window.navigator.userAgent.match(/BlackBerry/i)||window.navigator.userAgent.match(/Windows Phone/i));function Oe(){"undefined"!=typeof window&&se.forEach(function(e){window.document.addEventListener(e,Ve,{passive:!1})})}function Re(){return me&&me.ghostParent?me.ghostParent:fe&&fe.parentElement||window.document.body}var Ae,Ie,Be,Pe,Te,ze,Ne=(Pe=null,Te=1,ze=5,function(e,t,n){Ae=Je(e),Be=n,(Ie="number"==typeof t?t:Se?200:0)&&(Pe=setTimeout(Fe,Ie)),ce.forEach(function(e){return window.document.addEventListener(e,Le)},{passive:!1}),ue.forEach(function(e){return window.document.addEventListener(e,Me)},{passive:!1}),window.document.addEventListener("drag",je,{passive:!1})});function Le(e){var t=Je(e),n=t.clientX,o=t.clientY;if(Ie)(Math.abs(Ae.clientX-n)>ze||Math.abs(Ae.clientY-o)>ze)&&_e();else if(Math.abs(Ae.clientX-n)>Te||Math.abs(Ae.clientY-o)>Te)return Fe()}function Me(){_e()}function je(){_e()}function _e(){clearTimeout(Pe),ce.forEach(function(e){return window.document.removeEventListener(e,Le)},{passive:!1}),ue.forEach(function(e){return window.document.removeEventListener(e,Me)},{passive:!1}),window.document.removeEventListener("drag",je,{passive:!1})}function Fe(){clearTimeout(Pe),_e(),Be()}function Ve(e){var t=Je(e);if(!ve&&(void 0===t.button||0===t.button)&&(fe=N(t.target,"."+f))){var n=N(fe,"."+g),o=pe.filter(function(e){return e.element===n})[0],r=o.getOptions().dragHandleSelector,i=o.getOptions().nonDragAreaSelector,a=!0;if(r&&!N(t.target,r)&&(a=!1),i&&N(t.target,i)&&(a=!1),a){o.layout.invalidate(),M(window.document.body,s),M(window.document.body,c);window.document.addEventListener("mouseup",function e(){j(window.document.body,s),j(window.document.body,c),window.document.removeEventListener("mouseup",e)})}a&&Ne(t,o.getOptions().dragBeginDelay,function(){V(),et(t,X(e.target)),ce.forEach(function(e){window.document.addEventListener(e,Xe,{passive:!1})}),ue.forEach(function(e){window.document.addEventListener(e,Ue,{passive:!1})})})}}function Xe(e){e.preventDefault();var t=Je(e);if(me){var n=me.container.getOptions();"contain"===n.behaviour?function(e){var t,n,o,r,i=e.clientX,a=e.clientY,l=1<arguments.length&&void 0!==arguments[1]?arguments[1]:"vertical",s=me.container.layout.getBeginEndOfContainerVisibleRect();r="vertical"===l?(t=a,n="y",o="top",me.size.offsetHeight):(t=i,n="x",o="left",me.size.offsetWidth);var c=s.begin,u=s.end-r,d=Math.max(c,Math.min(u,t+ge.positionDelta[o]));ge.topLeft[n]=d,me.position[n]=Math.max(s.begin,Math.min(s.end,t+ge.centerDelta[n])),me.mousePosition[n]=Math.max(s.begin,Math.min(s.end,t)),me.position[n]<s.begin+r/2&&(me.position[n]=s.begin+2),me.position[n]>s.end-r/2&&(me.position[n]=s.end-2)}(t,n.orientation):Ee?"y"===Ee?(ge.topLeft.y=t.clientY+ge.positionDelta.top,me.position.y=t.clientY+ge.centerDelta.y,me.mousePosition.y=t.clientY):"x"===Ee&&(ge.topLeft.x=t.clientX+ge.positionDelta.left,me.position.x=t.clientX+ge.centerDelta.x,me.mousePosition.x=t.clientX):(ge.topLeft.x=t.clientX+ge.positionDelta.left,ge.topLeft.y=t.clientY+ge.positionDelta.top,me.position.x=t.clientX+ge.centerDelta.x,me.position.y=t.clientY+ge.centerDelta.y,me.mousePosition.x=t.clientX,me.mousePosition.y=t.clientY),nt(),(be=!we(me))&&We()}else et(t,X(e.target))}var He,Ye,ke,Ge,We=(He=qe,ke=!(Ye=20),Ge=null,function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];Ge&&clearTimeout(Ge),ke&&!Ge?He.call.apply(He,[null].concat(t)):Ge=setTimeout(function(){Ge=null,He.call.apply(He,[null].concat(t))},Ye)});function qe(){be&&(be=!1,Ke(me,de))}function Ue(){ce.forEach(function(e){window.document.removeEventListener(e,Xe,{passive:!1})}),ue.forEach(function(e){window.document.removeEventListener(e,Ue,{passive:!1})}),xe({reset:!0}),Ce&&(function(e){e&&"undefined"!=typeof window&&(window.document.head||window.document.getElementsByTagName("head")[0]).removeChild(e)}(Ce),Ce=null),me&&(De.stop(),qe(),ye=!0,function(e){function i(){j(ge.ghost,"animated"),ge.ghost.style.transitionDuration=null,Re().removeChild(ge.ghost),e()}function t(e,t,n){var o=e.top,r=e.left;M(ge.ghost,"animated"),n&&M(ge.ghost.firstElementChild,n),ge.topLeft.x=r,ge.topLeft.y=o,nt(t),setTimeout(function(){i()},t+20)}function n(e,t){M(ge.ghost,"animated"),nt(e,.9,!0),setTimeout(function(){t()},e+20)}if(me.targetElement){var o=pe.filter(function(e){return e.element===me.targetElement})[0];if(!(p=o.getOptions()).shouldAnimateDrop||p.shouldAnimateDrop(me.container.getOptions(),me.payload))t(o.getDragResult().shadowBeginEnd.rect,Math.max(150,o.getOptions().animationDuration/2),o.getOptions().dropClass);else i()}else{var r=pe.filter(function(e){return e===me.container})[0];if(r){var a=r.getOptions(),l=a.behaviour,s=a.removeOnDropOut;if("move"!==l&&"contain"!==l||!he&&s||!r.getDragResult())n(r.getOptions().animationDuration,i);else{var c=r.layout.getContainerRectangles();if(!H(c.visibleRect)&&H(c.lastVisibleRect))t({top:c.lastVisibleRect.top,left:c.lastVisibleRect.left},r.getOptions().animationDuration,r.getOptions().dropClass);else{var u=r.getDragResult(),d=u.removedIndex,f=u.elementSize,g=r.layout;r.getTranslateCalculator({dragResult:{removedIndex:d,addedIndex:d,elementSize:f,pos:void 0,shadowBeginEnd:void 0}});var m=0<d?g.getBeginEnd(r.draggables[d-1]).end:g.getBeginEndOfContainer().begin;t(g.getTopLeftOfElementBegin(m),r.getOptions().animationDuration,r.getOptions().dropClass)}}}else n(C.animationDuration,i)}var p}(function(){$e(ve=!1);for(var e=de||[],t=e.shift();void 0!==t;)t.handleDrop(me),t=e.shift();we=Ee=me=ge=fe=de=null,ye=!1}))}function Je(e){return e.touches?e.touches[0]:e}function Ke(n,e){var o=!1;e.forEach(function(e){var t=e.handleDrag(n);o=!!t.containerBoxChanged||!1,t.containerBoxChanged=!1}),o&&(o=!1,requestAnimationFrame(function(){pe.forEach(function(e){e.layout.invalidateRects(),e.onTranslated()})}))}function Qe(e){var t=e,n=null;return function(e){return!(null!==n||!ve||ye)&&(n=requestAnimationFrame(function(){ve&&!ye&&(Ke(e,t),xe({draggableInfo:e})),n=null}),!0)}}function Ze(e,t){return e.getOptions().autoScrollEnabled?ee(t,e.getScrollMaxSpeed()):function(e){return null}}function $e(o){pe.forEach(function(e){var t=o?e.getOptions().onDragStart:e.getOptions().onDragEnd;if(t){var n={isSource:e===me.container,payload:me.payload};e.isDragRelevant(me.container,me.payload)?n.willAcceptDrop=!0:n.willAcceptDrop=!1,t(n)}})}function et(e,t){if(null!==fe){ve=!0;var n=pe.filter(function(e){return fe.parentElement===e.element})[0];n.setDraggables(),Ee=n.getOptions().lockAxis?n.getOptions().lockAxis.toLowerCase():null,me=function(t){var e=pe.filter(function(e){return t.parentElement===e.element})[0],n=e.draggables.indexOf(t),o=e.getOptions().getGhostParent,r=t.getBoundingClientRect();return{container:e,element:t,size:{offsetHeight:r.bottom-r.top,offsetWidth:r.right-r.left},elementIndex:n,payload:e.getOptions().getChildPayload?e.getOptions().getChildPayload(n):void 0,targetElement:null,position:{x:0,y:0},groupName:e.getOptions().groupName,ghostParent:o?o():null,invalidateShadow:null,mousePosition:null,relevantContainers:null}}(fe),ge=function(e,t,n,o){var r=t.x,i=t.y,a=e.getBoundingClientRect(),l=a.left,s=a.top,c=a.right,u=a.bottom,d=A(n.layout.getContainerRectangles().visibleRect,a),f=d.left+(d.right-d.left)/2,g=d.top+(d.bottom-d.top)/2,m=e.cloneNode(!0);return m.style.zIndex="1000",m.style.boxSizing="border-box",m.style.position="fixed",m.style.top="0px",m.style.left="0px",m.style.transform=null,m.style.removeProperty("transform"),n.shouldUseTransformForGhost()?m.style.transform="translate3d(".concat(l,"px, ").concat(s,"px, 0)"):(m.style.top="".concat(s,"px"),m.style.left="".concat(l,"px")),m.style.width=c-l+"px",m.style.height=u-s+"px",m.style.overflow="visible",m.style.transition=null,m.style.removeProperty("transition"),m.style.pointerEvents="none",m.style.userSelect="none",n.getOptions().dragClass?setTimeout(function(){M(m.firstElementChild,n.getOptions().dragClass);var e=window.getComputedStyle(m.firstElementChild).cursor;Ce=ie(e)}):Ce=ie(o),M(m,n.getOptions().orientation||"vertical"),M(m,v),{ghost:m,centerDelta:{x:f-r,y:g-i},positionDelta:{left:l-r,top:s-i},topLeft:{x:l,y:s}}}(fe,{x:e.clientX,y:e.clientY},me.container,t),me.position={x:e.clientX+ge.centerDelta.x,y:e.clientY+ge.centerDelta.y},me.mousePosition={x:e.clientX,y:e.clientY},de=pe.filter(function(e){return e.isDragRelevant(n,me.payload)}),me.relevantContainers=de,we=Qe(de),xe&&xe({reset:!0,draggableInfo:void 0}),xe=Ze(n,de),de.forEach(function(e){return e.prepareDrag(e,de)}),$e(!0),we(me),Re().appendChild(ge.ghost),De.start()}}var tt=null;function nt(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:0,t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:1,n=2<arguments.length&&void 0!==arguments[2]&&arguments[2],o=ge,r=o.ghost,i=o.topLeft,a=i.x,l=i.y,s=!me.container||me.container.shouldUseTransformForGhost(),c=s?"translate3d(".concat(a,"px,").concat(l,"px, 0)"):null;if(1!==t&&(c=c?"".concat(c," scale(").concat(t,")"):"scale(".concat(t,")")),0<e)return ge.ghost.style.transitionDuration=e+"ms",void requestAnimationFrame(function(){c&&(r.style.transform=c),s||(r.style.left=a+"px",r.style.top=l+"px"),tt=null,n&&(r.style.opacity="0")});null===tt&&(tt=requestAnimationFrame(function(){c&&(r.style.transform=c),s||(r.style.left=a+"px",r.style.top=l+"px"),tt=null,n&&(r.style.opacity="0")}))}function ot(){if(ve&&!he&&!ye){be=!(he=!0);var t=Object.assign({},me,{targetElement:null,position:{x:Number.MAX_SAFE_INTEGER,y:Number.MAX_SAFE_INTEGER},mousePosition:{x:Number.MAX_SAFE_INTEGER,y:Number.MAX_SAFE_INTEGER}});de.forEach(function(e){e.handleDrag(t)}),me.targetElement=null,me.cancelDrop=!0,Ue(),he=!1}}"undefined"!=typeof window&&function(){if("undefined"!=typeof window){var e=window.document.head||window.document.getElementsByTagName("head")[0],t=window.document.createElement("style");t.id="smooth-dnd-style-definitions";var n=re(oe);t.type="text/css",t.styleSheet?t.styleSheet.cssText=n:t.appendChild(window.document.createTextNode(n)),e.appendChild(t)}}();var rt=(Oe(),{register:function(e){!function(e){pe.push(e),ve&&me&&e.isDragRelevant(me.container,me.payload)&&(de.push(e),e.prepareDrag(e,de),xe&&xe({reset:!0,draggableInfo:void 0}),xe=Ze(e,de),we=Qe(de),e.handleDrag(me))}(e)},unregister:function(e){!function(e){if(pe.splice(pe.indexOf(e),1),ve&&me){me.container===e&&e.fireRemoveElement(),me.targetElement===e.element&&(me.targetElement=null);var t=de.indexOf(e);-1<t&&(de.splice(t,1),xe&&xe({reset:!0,draggableInfo:void 0}),xe=Ze(e,de),we=Qe(de))}}(e)},isDragging:function(){return ve},cancelDrag:ot});function it(e,t){var n=2<arguments.length&&void 0!==arguments[2]?arguments[2]:C.animationDuration;t?(M(e,o),e.style.transitionDuration=n+"ms"):(j(e,o),e.style.removeProperty("transition-duration"))}function at(n){var o=[];return Array.prototype.forEach.call(n.children,function(e){if(e.nodeType===Node.ELEMENT_NODE){var t=e;L(e,f)||(t=function(e){if(It.wrapChild){var t=window.document.createElement("div");return t.className="".concat(f),e.parentElement.insertBefore(t,e),t.appendChild(e),t}return e}(e)),t[p]=0,o.push(t)}else n.removeChild(e)}),o}function lt(e){var g=e.layout;return function(e,t){var n=2<arguments.length&&void 0!==arguments[2]&&arguments[2];return function e(t,n,o,r){var i=4<arguments.length&&void 0!==arguments[4]&&arguments[4];if(r<o)return o;if(o===r){var a=g.getBeginEnd(t[o]),l=a.begin,s=a.end;return i?n<(s+l)/2?o:o+1:o}var c=Math.floor((r+o)/2),u=g.getBeginEnd(t[c]),d=u.begin,f=u.end;return n<d?e(t,n,o,c-1,i):f<n?e(t,n,c+1,r,i):i?n<(f+d)/2?c:c+1:c}(e,t,0,e.length-1,n)}}function st(e){var t=e.element,n=e.draggables,o=e.layout,a=e.getOptions,l=function(e){var t=e.element,n=e.draggables,o=e.layout;return function(){n.forEach(function(e){it(e,!1),o.setTranslation(e,0),o.setVisibility(e,!0)}),t[y]&&(t[y].parentNode.removeChild(t[y]),t[y]=null)}}({element:t,draggables:n,layout:o,getOptions:a}),s=(It.dropHandler||Y)({element:t,draggables:n,layout:o,getOptions:a});return function(e,t){var n=t.addedIndex,o=t.removedIndex,r=2<arguments.length&&void 0!==arguments[2]&&arguments[2];if(l(),!e.cancelDrop&&(e.targetElement||a().removeOnDropOut||r)){var i={removedIndex:o,addedIndex:null!==n?null!==o&&o<n?n-1:n:null,payload:e.payload};s(i,a().onDrop)}}}function ct(e){var o=e.element,r=e.getOptions,i=null;return function(e){var t=e.draggableInfo,n=i;return null==i&&t.container.element===o&&"copy"!==r().behaviour&&(n=i=t.elementIndex),{removedIndex:n}}}function ut(e){var n=e.draggables,o=e.layout;return function(e){var t=e.dragResult;null!==t.removedIndex&&o.setVisibility(n[t.removedIndex],!1)}}function dt(e){var r=e.element,i=e.layout;return function(e){var t=e.draggableInfo,n=document.elementFromPoint(t.position.x,t.position.y);if(n){var o=z(n,t.relevantContainers);if(o&&o.element===r)return{pos:i.getPosition(t.position)}}return{pos:null}}}function ft(e){var n=e.layout,o=null;return function(e){var t=e.draggableInfo;return null===e.dragResult.pos?o=null:{elementSize:o=o||n.getSize(t.size)}}}function gt(e){var o=e.element;return function(e){var t=e.draggableInfo,n=e.dragResult;!function(e,t){var n=!(2<arguments.length&&void 0!==arguments[2])||arguments[2];t&&n?e.targetElement=t:e.targetElement===t&&(e.targetElement=null)}(t,o,!!n.pos)}}function mt(){return function(e){return null!==e.dragResult.pos?{addedIndex:0}:{addedIndex:null}}}function pt(e){var r=e.layout,i=null;return function(e){var t=e.dragResult.addedIndex;if(t===i)return null;i=t;var n=r.getBeginEndOfContainer(),o=n.begin;n.end;return{shadowBeginEnd:{rect:r.getTopLeftOfElementBegin(o)}}}}function vt(e){var g=e.layout,m=e.element,p=e.getOptions,v=null;return function(e){var t=e.dragResult,n=t.elementSize,o=t.shadowBeginEnd,r=t.addedIndex,i=t.dropPlaceholderContainer,a=p();if(a.dropPlaceholder){var l="boolean"==typeof a.dropPlaceholder?{}:a.dropPlaceholder,s=l.animationDuration,c=l.className,u=l.showOnTop;if(null===r)return i&&null!==v&&m.removeChild(i),v=null,{dropPlaceholderContainer:void 0};if(!i){var d=document.createElement("div"),f=document.createElement("div");f.className=E,d.className="".concat(w," ").concat(c||b),(i=document.createElement("div")).className="".concat(x),i.style.position="absolute",void 0!==s&&(i.style.transition="all ".concat(s,"ms ease")),i.appendChild(f),f.appendChild(d),g.setSize(i.style,n+"px"),i.style.pointerEvents="none",u?m.appendChild(i):m.insertBefore(i,m.firstElementChild)}return v!==r&&o.dropArea&&g.setBegin(i.style,o.dropArea.begin-g.getBeginEndOfContainer().begin+"px"),v=r,{dropPlaceholderContainer:i}}return null}}function ht(e){var o=Et(e);return function(e){var t=e.draggableInfo,n=e.dragResult;return t.invalidateShadow?o({draggableInfo:t,dragResult:n}):null}}function yt(e){var o=function(e){var i=e.draggables,a=lt({layout:e.layout});return function(e){var t=e.dragResult,n=t.shadowBeginEnd,o=t.pos;if(n)return n.begin+n.beginAdjustment<=o&&n.end>=o?null:o<n.begin+n.beginAdjustment?a(i,o):o>n.end?a(i,o)+1:i.length;var r=a(i,o,!0);return null!==r?r:i.length}}(e);return function(e){var t=e.dragResult,n=null;return null!==t.pos&&null===(n=o({dragResult:t}))&&(n=t.addedIndex),{addedIndex:n}}}function bt(){var r=null;return function(e){var t=e.dragResult,n=t.addedIndex,o=t.shadowBeginEnd;n!==r&&null!==r&&o&&(o.beginAdjustment=0),r=n}}function wt(e){var u=e.element,d=e.draggables,f=e.layout,g=e.getOptions,m=null;return function(e){var t=e.dragResult,n=t.addedIndex,o=t.removedIndex,r=t.elementSize;if(null===o)if(null!==n){if(!m){var i=f.getBeginEndOfContainer();i.end=i.begin+f.getSize(u);var a=f.getScrollSize(u)>f.getSize(u)?i.begin+f.getScrollSize(u)-f.getScrollValue(u):i.end,l=0<d.length?f.getBeginEnd(d[d.length-1]).end-d[d.length-1][p]:i.begin;if(a<l+r){(m=window.document.createElement("div")).className=h+" "+g().orientation;var s=0<d.length?r+l-a:r;return f.setSize(m.style,"".concat(s,"px")),u.appendChild(m),u[y]=m,{containerBoxChanged:!0}}}}else if(m){f.setTranslation(m,0);var c=m;return m=null,u.removeChild(c),{containerBoxChanged:!(u[y]=null)}}}}function xt(e){var s=e.draggables,c=e.layout,u=null,d=null;return function(e){var t=e.dragResult,n=t.addedIndex,o=t.removedIndex,r=t.elementSize;if(n!==u||o!==d){for(var i=0;i<s.length;i++)if(i!==o){var a=s[i],l=0;null!==o&&o<i&&(l-=r),null!==n&&n<=i&&(l+=r),c.setTranslation(a,l)}return{addedIndex:u=n,removedIndex:d=o}}}}function Et(e){var x=e.draggables,E=e.layout,C=null;return function(e){var t=e.draggableInfo,n=e.dragResult,o=n.addedIndex,r=n.removedIndex,i=n.elementSize,a=n.pos,l=n.shadowBeginEnd;if(null===a)return{shadowBeginEnd:C=null};if(null===o||!t.invalidateShadow&&o===C)return null;var s=o-1,c=Number.MIN_SAFE_INTEGER,u=0,d=0,f=null,g=null;if(s===r&&s--,-1<s){var m=E.getSize(x[s]);if(g=E.getBeginEnd(x[s]),i<m){var p=(m-i)/2;c=g.end-p}else c=g.end;u=g.end}else g={end:E.getBeginEndOfContainer().begin},u=E.getBeginEndOfContainer().begin;var v=Number.MAX_SAFE_INTEGER,h=o;if(h===r&&h++,h<x.length){var y=E.getSize(x[h]);if(f=E.getBeginEnd(x[h]),i<y){var b=(y-i)/2;v=f.begin+b}else v=f.begin;d=f.begin}else f={begin:E.getContainerRectangles().rect.end},d=E.getContainerRectangles().rect.end-E.getContainerRectangles().rect.begin;var w=g&&f?E.getTopLeftOfElementBegin(g.end):null;return C=o,{shadowBeginEnd:{dropArea:{begin:u,end:d},begin:c,end:v,rect:w,beginAdjustment:l?l.beginAdjustment:0}}}}function Ct(){var a=null;return function(e){var t=e.dragResult,n=t.pos,o=t.addedIndex,r=t.shadowBeginEnd;if(null!==n){if(null!=o&&null===a){if(n<r.begin){var i=n-r.begin-5;r.beginAdjustment=i}a=o}}else a=null}}function Dt(e){var t=e.getOptions,n=!1,o=t();return function(e){var t=!!e.dragResult.pos;t!==n&&((n=t)?o.onDragEnter&&o.onDragEnter():o.onDragLeave&&o.onDragLeave())}}function St(e){var t=e.getOptions,s=null,c=t();return function(e){var t=e.dragResult,n=t.addedIndex,o=t.removedIndex,r=e.draggableInfo,i=r.payload,a=r.element;if(c.onDropReady&&null!==n&&s!==n){var l=s=n;null!==o&&o<n&&l--,c.onDropReady({addedIndex:l,removedIndex:o,payload:i,element:a?a.firstElementChild:void 0})}}}function Ot(e){return"drop-zone"===e.getOptions().behaviour?Rt(e)(ct,ut,dt,ft,gt,mt,pt,Dt,St):Rt(e)(ct,ut,dt,ft,gt,ht,yt,bt,wt,xt,Et,vt,Ct,Dt,St)}function Rt(i){return function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];var o=t.map(function(e){return e(i)}),r=null;return function(n){return r=o.reduce(function(e,t){return Object.assign(e,t({draggableInfo:n,dragResult:e}))},r||{addedIndex:null,removedIndex:null,elementSize:null,pos:null,shadowBeginEnd:null})}}}function At(d){return function(e){var n=Object.assign({},C,e),t=null,o=null,r=function(e,t){var n=at(e),o=t();return M(e,"".concat(g," ").concat(o.orientation)),{element:e,draggables:n,getOptions:t,layout:q(e,o.orientation,o.animationDuration)}}(d,u),i=Ot(r),a=st(r),l=function(t,n){var o=[];function e(){o&&(o.forEach(function(e){return e.removeEventListener("scroll",n)}),window.removeEventListener("scroll",n))}return function(){var e=t;for(;e;)(R(e,"x")||R(e,"y"))&&o.push(e),e=e.parentElement}(),{dispose:function(){e(),o=null},start:function(){o&&(o.forEach(function(e){return e.addEventListener("scroll",n)}),window.addEventListener("scroll",n))},stop:e}}(d,function(){r.layout.invalidateRects(),s()});function s(){null!==o&&(o.invalidateShadow=!0,t=i(o),o.invalidateShadow=!1)}function c(e,t){for(var n=at(t),o=0;o<n.length;o++)e[o]=n[o];for(var r=0;r<e.length-n.length;r++)e.pop()}function u(){return n}return{element:d,draggables:r.draggables,isDragRelevant:function(e){var r=e.element,i=e.getOptions;return function(e,t){var n=i();if(n.shouldAcceptDrop)return n.shouldAcceptDrop(e.getOptions(),t);var o=e.getOptions();return"copy"!==n.behaviour&&(N(r,"."+f)!==e.element&&(e.element===r||!(!o.groupName||o.groupName!==n.groupName)))}}(r),layout:r.layout,dispose:function(e){l.dispose(),function(t){It.wrapChild&&Array.prototype.forEach.call(t.children,function(e){e.nodeType===Node.ELEMENT_NODE&&L(e,f)&&(t.insertBefore(e.firstElementChild,e),t.removeChild(e))})}(e.element)},prepareDrag:function(e,t){var n=e.element,o=r.draggables;c(o,n),e.layout.invalidateRects(),o.forEach(function(e){return it(e,!0,u().animationDuration)}),l.start()},handleDrag:function(e){return t=i(o=e)},handleDrop:function(e){l.stop(),t&&t.dropPlaceholderContainer&&d.removeChild(t.dropPlaceholderContainer),o=null,i=Ot(r),a(e,t),t=null},fireRemoveElement:function(){a(o,Object.assign({},t,{addedIndex:null}),!0),t=null},getDragResult:function(){return t},getTranslateCalculator:function(e){return xt(r)(e)},onTranslated:function(){s()},setDraggables:function(){c(r.draggables,d)},getScrollMaxSpeed:function(){return It.maxScrollSpeed},shouldUseTransformForGhost:function(){return!0===It.useTransformForGhost},getOptions:u,setOptions:function(e){var t=!(1<arguments.length&&void 0!==arguments[1])||arguments[1];n=!1===t?Object.assign({},C,e):Object.assign({},C,n,e)}}}}var It=function(e,t){var n=At(e)(t);return e[r]=n,rt.register(n),{dispose:function(){rt.unregister(n),n.dispose(n)},setOptions:function(e,t){n.setOptions(e,t)}}};function Bt(e,t,n){Object.defineProperty(e,n,{set:function(e){t[n]=e},get:function(){return t[n]}})}It.wrapChild=!0,It.cancelDrag=function(){rt.cancelDrag()},It.isDragging=function(){return rt.isDragging()};function Pt(e,t){return console.warn('default export is deprecated. please use named export "smoothDnD"'),It(e,t)}Pt.cancelDrag=function(){It.cancelDrag()},Pt.isDragging=function(){return It.isDragging()},Bt(Pt,It,"useTransformForGhost"),Bt(Pt,It,"maxScrollSpeed"),Bt(Pt,It,"wrapChild"),Bt(Pt,It,"dropHandler"),e.smoothDnD=It,e.constants=n,e.dropHandlers=k,e.default=Pt,Object.defineProperty(e,"__esModule",{value:!0})});
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TaskDnd.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : 0;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalCreateTask.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/ModalCreateTask.vue ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalCreateTask.vue?vue&type=template&id=42435493& */ "./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493&");
-/* harmony import */ var _ModalCreateTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalCreateTask.vue?vue&type=script&lang=js& */ "./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ModalCreateTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__.render,
-  _ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ModalCreateTask.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalShowTask.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/ModalShowTask.vue ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalShowTask.vue?vue&type=template&id=23d3ac14& */ "./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14&");
-/* harmony import */ var _ModalShowTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalShowTask.vue?vue&type=script&lang=js& */ "./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ModalShowTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__.render,
-  _ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ModalShowTask.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/TaskDnd.vue":
-/*!*********************************************!*\
-  !*** ./resources/js/components/TaskDnd.vue ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TaskDnd.vue?vue&type=template&id=9958b78c& */ "./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c&");
-/* harmony import */ var _TaskDnd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskDnd.vue?vue&type=script&lang=js& */ "./resources/js/components/TaskDnd.vue?vue&type=script&lang=js&");
-/* harmony import */ var _TaskDnd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TaskDnd.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-;
-
-
-/* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _TaskDnd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__.render,
-  _TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/TaskDnd.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalCreateTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalCreateTask.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalCreateTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalShowTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalShowTask.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalShowTask_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TaskDnd.vue?vue&type=script&lang=js&":
-/*!**********************************************************************!*\
-  !*** ./resources/js/components/TaskDnd.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TaskDnd.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css& ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TaskDnd.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=style&index=0&lang=css&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493& ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalCreateTask_vue_vue_type_template_id_42435493___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalCreateTask.vue?vue&type=template&id=42435493& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14& ***!
-  \**********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalShowTask_vue_vue_type_template_id_23d3ac14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModalShowTask.vue?vue&type=template&id=23d3ac14& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c& ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TaskDnd_vue_vue_type_template_id_9958b78c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TaskDnd.vue?vue&type=template&id=9958b78c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c&");
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalCreateTask.vue?vue&type=template&id=42435493& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "modal fade show",
-      attrs: {
-        id: "modalCreateTask",
-        tabindex: "-1",
-        role: "dialog",
-        "aria-labelledby": "modalCreateTask",
-        "aria-hidden": "true",
-      },
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "modal-dialog modal-dialog-centered",
-          attrs: { role: "document" },
-        },
-        [
-          _c("div", { staticClass: "modal-content bg-dark text-white" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("form", { attrs: { id: "add-task-form", method: "post" } }, [
-              _c("div", { staticClass: "modal-body" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group mt-4" }, [
-                  _c("div", { staticClass: "input-group mb-3" }, [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        staticClass:
-                          "custom-select form-control bg-secondary text-white border-warning",
-                        attrs: { id: "priority", name: "priority" },
-                      },
-                      _vm._l(_vm.priorities, function (priority) {
-                        return _c(
-                          "option",
-                          { key: priority, domProps: { value: priority } },
-                          [_vm._v(_vm._s(priority))]
-                        )
-                      }),
-                      0
-                    ),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _vm._m(3),
-            ]),
-          ]),
-        ]
-      ),
-    ]
-  )
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header h4 text-warning" }, [
-      _vm._v("\n        Add new task\n        "),
-      _c(
-        "button",
-        {
-          staticClass: "close btn text-white circle",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close",
-          },
-        },
-        [
-          _c("span", { staticClass: "h4", attrs: { "aria-hidden": "true" } }, [
-            _vm._v("×"),
-          ]),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "form-group mt-2" }, [
-        _c("div", { staticClass: "input-group" }, [
-          _c("div", { staticClass: "input-group-prepend" }, [
-            _c(
-              "label",
-              {
-                staticClass:
-                  "input-group-text bg-warning text-white border-warning",
-                attrs: { for: "title" },
-              },
-              [_vm._v("Title")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control bg-secondary text-white border-warning",
-            attrs: { type: "text", id: "title", name: "title" },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "label",
-        {
-          staticClass: "col-form-label text-warning",
-          attrs: { for: "description" },
-        },
-        [_vm._v("Description:")]
-      ),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control bg-secondary text-white border-warning",
-        attrs: { id: "description", name: "description" },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "label",
-        {
-          staticClass: "input-group-text bg-warning text-white border-warning",
-          attrs: { for: "priority" },
-        },
-        [_vm._v("Priority")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary close",
-          attrs: { type: "button", "data-dismiss": "modal" },
-        },
-        [_vm._v("Close")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-warning text-dark add-task",
-          attrs: { type: "submit", id: "add-task" },
-        },
-        [_vm._v("Add task")]
-      ),
-    ])
-  },
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModalShowTask.vue?vue&type=template&id=23d3ac14& ***!
-  \*************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "modal fade show",
-      attrs: {
-        id: "exampleModalCenter",
-        tabindex: "-1",
-        role: "dialog",
-        "aria-labelledby": "exampleModalCenterTitle",
-        "aria-hidden": "true",
-      },
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "modal-dialog modal-dialog-centered",
-          attrs: { role: "document" },
-        },
-        [
-          _c("div", { staticClass: "modal-content bg-dark text-white" }, [
-            _c("form", { attrs: { id: "update-task-form", method: "post" } }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-body" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group mt-4" }, [
-                  _c("div", { staticClass: "input-group mb-3" }, [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        staticClass:
-                          "custom-select form-control bg-secondary text-white border-warning",
-                        attrs: { id: "priority", name: "priority" },
-                      },
-                      _vm._l(_vm.priorities, function (priority) {
-                        return _c(
-                          "option",
-                          { key: priority, domProps: { value: priority } },
-                          [_vm._v(_vm._s(priority))]
-                        )
-                      }),
-                      0
-                    ),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _vm._m(3),
-            ]),
-          ]),
-        ]
-      ),
-    ]
-  )
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("div", { staticClass: "form-group mt-4" }, [
-        _c("div", { staticClass: "input-group" }, [
-          _c("div", { staticClass: "input-group-prepend" }, [
-            _c(
-              "label",
-              {
-                staticClass:
-                  "input-group-text bg-warning text-white border-warning",
-                attrs: { for: "title" },
-              },
-              [_vm._v("Title")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control bg-secondary text-white border-warning",
-            attrs: { type: "text", id: "title", name: "title" },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close btn text-white circle",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close",
-          },
-        },
-        [
-          _c("span", { staticClass: "h4", attrs: { "aria-hidden": "true" } }, [
-            _vm._v("×"),
-          ]),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "col-form-label text-warning",
-          attrs: { for: "description" },
-        },
-        [_vm._v("Description:")]
-      ),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control bg-secondary text-white border-warning",
-        attrs: { id: "description", name: "description" },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "label",
-        {
-          staticClass: "input-group-text bg-warning text-white border-warning",
-          attrs: { for: "priority" },
-        },
-        [_vm._v("Priority")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-danger delete-task",
-          attrs: { type: "button", "data-delete-href": "" },
-        },
-        [_vm._v("Delete")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary close",
-          attrs: { type: "button", "data-dismiss": "modal" },
-        },
-        [_vm._v("Close")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary update-task",
-          attrs: { type: "submit", id: "save-changes" },
-        },
-        [_vm._v("Save changes")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-warning text-white add-user",
-          attrs: { type: "button" },
-        },
-        [_c("i", { staticClass: "fa-solid fa-user-plus" }), _vm._v(" Add user")]
-      ),
-    ])
-  },
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TaskDnd.vue?vue&type=template&id=9958b78c& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container d-flex" },
-    [
-      _vm._l(_vm.statuses, function (status) {
-        return _c(
-          "div",
-          {
-            staticClass: "drop-zone",
-            on: {
-              drop: function ($event) {
-                return _vm.onDrop($event, status)
-              },
-              dragenter: function ($event) {
-                $event.preventDefault()
-              },
-              dragover: function ($event) {
-                $event.preventDefault()
-              },
-            },
-          },
-          [
-            _c("h5", [_vm._v(_vm._s(status))]),
-            _vm._v(" "),
-            _vm._l(_vm.cards, function (task) {
-              return task.status === status
-                ? _c(
-                    "div",
-                    {
-                      key: task.id,
-                      staticClass:
-                        "drag-el bg-warning text-dark text-opacity-75",
-                      attrs: {
-                        draggable: "true",
-                        "data-task": task.id,
-                        type: "button",
-                        "data-toggle": "modal",
-                        "data-target": "#exampleModalCenter",
-                      },
-                      on: {
-                        dragstart: function ($event) {
-                          return _vm.startDrag($event, task)
-                        },
-                        click: function ($event) {
-                          return _vm.clickFunction($event)
-                        },
-                      },
-                    },
-                    [
-                      _vm._v(
-                        "\n           " + _vm._s(task.title) + "\n        "
-                      ),
-                    ]
-                  )
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "btn btn-dark text-warning col-12 mt-2 border-radius",
-                on: {
-                  click: function ($event) {
-                    return _vm.addNewTask(status)
-                  },
-                },
-              },
-              [_vm._v("+ Add task")]
-            ),
-          ],
-          2
-        )
-      }),
-      _vm._v(" "),
-      _c("ModalShowTask", { attrs: { priorities: _vm.priorities } }),
-      _vm._v(" "),
-      _c("ModalCreateTask", {
-        attrs: { priorities: _vm.priorities, status: _vm.status },
-      }),
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ normalizeComponent)
-/* harmony export */ });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functional component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-smooth-dnd/dist/vue-smooth-dnd.esm.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/vue-smooth-dnd/dist/vue-smooth-dnd.esm.js ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Container": () => (/* binding */ Container),
-/* harmony export */   "Draggable": () => (/* binding */ Draggable)
-/* harmony export */ });
-/* harmony import */ var smooth_dnd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-dnd */ "./node_modules/smooth-dnd/dist/index.js");
-/* harmony import */ var smooth_dnd__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smooth_dnd__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in smooth_dnd__WEBPACK_IMPORTED_MODULE_0__) if(["default","Container","Draggable"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => smooth_dnd__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
-/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
-/**
- * Bundle of: vue-smooth-dnd
- * Generated: 2019-10-26
- * Version: 0.8.1
- */
-
-
-
-
-var isArray = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]';
-};
-
-function getTagProps (ctx, tagClasses) {
-  var tag = ctx.$props.tag;
-  if (tag) {
-    if (typeof tag === 'string') {
-      var result = { value: tag };
-      if (tagClasses) {
-        result.props = { class: tagClasses };
-      }
-      return result;
-    } else if (typeof tag === 'object') {
-      var result$1 = { value: tag.value || 'div', props: tag.props || {} };
-
-      if (tagClasses) {
-        if (result$1.props.class) {
-          if (isArray(result$1.props.class)) {
-            result$1.props.class.push(tagClasses);
-          } else {
-            result$1.props.class = [tagClasses, result$1.props.class];
-          }
-        } else {
-          result$1.props.class = tagClasses;
-        }
-      }
-
-      return result$1;
-    }
-  }
-  return { value: 'div' };
-}
-
-function validateTagProp (tag) {
-  if (tag) {
-    if (typeof tag === 'string') { return true; }
-    if (typeof tag === 'object') {
-      if (
-        typeof tag.value === 'string' ||
-        typeof tag.value === 'function' ||
-        typeof tag.value === 'object'
-      ) {
-        return true;
-      }
-    }
-    return false;
-  }
-  return true;
-}
-
-/* eslint-disable curly */
-
-smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.smoothDnD.dropHandler = smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.dropHandlers.reactDropHandler().handler;
-smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.smoothDnD.wrapChild = false;
-
-var eventEmitterMap = {
-  'drag-start': 'onDragStart',
-  'drag-end': 'onDragEnd',
-  'drop': 'onDrop',
-  'drag-enter': 'onDragEnter',
-  'drag-leave': 'onDragLeave',
-  'drop-ready': 'onDropReady'
-};
-
-function getContainerOptions (props, context) {
-  var options = Object.keys(props).reduce(function (result, key) {
-    var optionName = key;
-    var prop = props[optionName];
-
-    if (prop !== undefined) {
-      if (typeof prop === 'function') {
-        if (eventEmitterMap[optionName]) {
-          result[eventEmitterMap[optionName]] = function (params) {
-            context.$emit(optionName, params);
-          };
-        } else {
-          result[optionName] = function () {
-            var params = [], len = arguments.length;
-            while ( len-- ) params[ len ] = arguments[ len ];
-
-            return (prop).apply(void 0, params);
-          };
-        }
-      } else {
-        result[optionName] = prop;
-      }
-    }
-
-    return result;
-  }, {});
-
-  return options;
-}
-
-var mapOptions = function (context) {
-  var props = Object.assign({}, context.$props, context.$listeners);
-  return getContainerOptions(props, context);
-};
-
-var Container = {
-  name: 'Container',
-  mounted: function mounted () {
-    this.containerElement = this.$refs.container || this.$el;
-    this.container = (0,smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.smoothDnD)(this.containerElement, mapOptions(this));
-  },
-  updated: function updated () {
-    if (
-      this.$refs.container !== this.containerElement &&
-      this.$el !== this.containerElement
-    ) {
-      if (this.container) {
-        this.container.dispose();
-      }
-      this.containerElement = this.$refs.container || this.$el;
-      this.container = (0,smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.smoothDnD)(this.containerElement, mapOptions(this));
-      return;
-    }
-
-    this.container.setOptions(mapOptions(this));
-  },
-  destroyed: function destroyed () {
-    if (this.container) {
-      this.container.dispose();
-    }
-  },
-  props: {
-    behaviour: String,
-    groupName: String,
-    orientation: String,
-    dragHandleSelector: String,
-    nonDragAreaSelector: String,
-    dragBeginDelay: Number,
-    animationDuration: Number,
-    autoScrollEnabled: { type: Boolean, default: true },
-    lockAxis: String,
-    dragClass: String,
-    dropClass: String,
-    removeOnDropOut: { type: Boolean, default: false },
-    'drag-start': Function,
-    'drag-end': Function,
-    drop: Function,
-    getChildPayload: Function,
-    shouldAnimateDrop: Function,
-    shouldAcceptDrop: Function,
-    'drag-enter': Function,
-    'drag-leave': Function,
-    tag: {
-      validator: validateTagProp,
-      default: 'div',
-    },
-    getGhostParent: Function,
-    'drop-ready': Function,
-    dropPlaceholder: [Object, Boolean]
-  },
-  render: function (createElement) {
-    var tagProps = getTagProps(this);
-    return createElement(
-      tagProps.value,
-      Object.assign({}, { ref: 'container' }, tagProps.props),
-      this.$slots.default
-    );
-  }
-};
-
-var wrapChild = function (createElement, ctx) {
-  var tagProps = getTagProps(ctx, smooth_dnd__WEBPACK_IMPORTED_MODULE_0__.constants.wrapperClass);
-  return createElement(
-    tagProps.value,
-    Object.assign({}, tagProps.props),
-    ctx.$slots.default
-  );
-};
-
-var Draggable = {
-  name: 'Draggable',
-  props: {
-    tag: {
-      validator: validateTagProp,
-      default: 'div'
-    }
-  },
-  render: function (createElement) {
-    return wrapChild(createElement, this);
-  }
-};
-
-
 
 
 /***/ }),

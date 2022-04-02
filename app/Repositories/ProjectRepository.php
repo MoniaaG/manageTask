@@ -13,6 +13,7 @@ class ProjectRepository implements ProjectRepositoryInterface {
         $project->title = $request->title;
         $project->description =  $request->description ?? null;
         $project->creator_id = Auth::id();
+        $project->community_id = Auth::user()->community->id;
         $project->save();
         return $project;
     }
@@ -21,6 +22,7 @@ class ProjectRepository implements ProjectRepositoryInterface {
         $project = Project::findOrFail($project->id);
         $project->title = $request->title;
         $project->description =  $request->description ?? null;
+        $project->community_id = Auth::user()->community->id;
         $project->save();
         return $project;
     }
