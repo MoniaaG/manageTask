@@ -25,30 +25,23 @@ class TaskController extends Controller
         $tasks = $project->tasks;
         $statuses = Status::status();
         $priorities = Priority::priority();
-        return view('task.index', compact('tasks', 'statuses', 'priorities', 'project'));
+        $users = $project->users;
+        return view('task.index', compact('tasks', 'statuses', 'priorities', 'project', 'users'));
     }
 
     public function show(Request $request) {
         $task = Task::findOrFail($request->id);
-        return response()->json(['task' => $task]);
-    }
-
-    public function create() {
-        $users = Auth::user()->community()->users;
-        return view('task.create', compact('users'));
+        $users = $task->users()->pluck('users.id');
+        return response()->json(['task' => $task, 'users' => $users]);
     }
 
     public function store(Request $request) {
         $task = $this->task_repository->store($request);
     }
 
-    public function edit(Task $task) {
-        $users = Auth::user()->community()->users;
-        return view('task.edit', compact('task', 'users'));
-    }
-
     public function update(UpdateRequest $request) {
         $this->task_repository->update($request);
+        ///toastr()->success('Task updated!');
     }
 
     public function delete(Request $request) {

@@ -25,9 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/tasks/{project}', [TaskController::class, 'index'])->name('task.index');
     Route::get('/task/show', [TaskController::class, 'show'])->name('task.show');
-    Route::get('/task/create', [TaskController::class, 'create'])->name('task.create');
     Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
-    Route::get('/task/edit/{task}', [TaskController::class, 'edit'])->name('task.edit');
     Route::put('/task/update', [TaskController::class, 'update'])->name('task.update');
     Route::delete('/task/delete', [TaskController::class, 'delete'])->name('task.delete');
 

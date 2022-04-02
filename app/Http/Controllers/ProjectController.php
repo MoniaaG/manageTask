@@ -43,6 +43,5 @@ class ProjectController extends Controller
 
     public function delete(Project $project) {
         $this->project_repository->delete($project);
-        return redirect()->route('project.index');
     }
 }

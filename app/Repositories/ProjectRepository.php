@@ -15,6 +15,8 @@ class ProjectRepository implements ProjectRepositoryInterface {
         $project->creator_id = Auth::id();
         $project->community_id = Auth::user()->community->id;
         $project->save();
+
+        $project->users()->attach($request->users);
         return $project;
     }
 
@@ -24,6 +26,8 @@ class ProjectRepository implements ProjectRepositoryInterface {
         $project->description =  $request->description ?? null;
         $project->community_id = Auth::user()->community->id;
         $project->save();
+ 
+        $project->users()->sync($request->users);
         return $project;
     }
 

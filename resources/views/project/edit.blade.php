@@ -16,7 +16,7 @@
                     <textarea class="form-control bg-dark text-white border-warning border-2 bg-secondary" id="description" name="description" rows="3">{{$project->description}}</textarea>
                 </div>
                 <div class="mb-3">
-                <label for="title" class="form-label text-warning h5">Assign users to project which can have access to see task inside</label>
+                <label for="users[]" class="form-label text-warning h5">Assign users to project which can have access to see task inside</label>
                 <select id="users" class="form-control bg-dark text-white border-warning border-2 bg-secondary m-0" name="users[]" multiple="multiple">
                     @foreach($users as $user)
                         <option @if(in_array($user->id, $project->users->pluck('id')->toArray())) selected @endif value="{{$user->id}}">{{$user->name}}</option>

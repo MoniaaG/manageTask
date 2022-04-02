@@ -23,9 +23,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    @toastr_css
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+    @toastr_css
     <script>
         $(document).ready(function() {
             //
