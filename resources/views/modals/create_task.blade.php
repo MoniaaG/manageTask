@@ -1,5 +1,4 @@
-<template>
-    <div class="modal fade show" id="modalCreateTask" tabindex="-1" role="dialog" aria-labelledby="modalCreateTask" aria-hidden="true">
+<div class="modal fade show" id="modalCreateTask" tabindex="-1" role="dialog" aria-labelledby="modalCreateTask" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content bg-dark text-white">
         <div class="modal-header h4 text-warning">
@@ -28,7 +27,9 @@
                   <label class="input-group-text bg-warning text-white border-warning" for="priority">Priority</label>
                 </div>
                 <select class="custom-select form-control bg-secondary text-white border-warning" id="priority" name="priority">
-                    <option v-for="priority in priorities" :key="priority" v-bind:value="priority">{{priority}}</option>
+                    @foreach($priorities as $priority)
+                    <option value="{{$priority}}">{{$priority}}</option>
+                    @endforeach
                 </select>
               </div>
             </div> 
@@ -41,26 +42,3 @@
       </div>
     </div>
   </div>
-</template>
-
-<script>
-    export default {
-        name: "ModalCreateTask",
-        props: {
-            priorities: {
-                type: [],
-                default: () => this.priorities,
-            },
-        },
-        data() {
-            return {
-                priorities: [],
-            };
-        },
-        methods: {}
-    }
-</script>
-
-<style>
-
-</style>

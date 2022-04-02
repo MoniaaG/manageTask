@@ -12,7 +12,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- Scripts -->
+    @if(Route::currentRouteName() == 'project.create' || 'project.edit')
+        <script src="{{ asset('js/app.js') }}"></script>
+    @else
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,7 +26,6 @@
     @toastr_css
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <script defer src="{{ mix('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             //
@@ -63,7 +66,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('project.index') }}">{{ __('Projects') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('project.create') }}">{{ __('Add project') }}</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -110,8 +120,8 @@
         </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
-
     @toastr_js
     @toastr_render
+    @yield('js')
 </body>
 </html>

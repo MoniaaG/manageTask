@@ -25,7 +25,7 @@ class TaskRepository implements TaskRepositoryInterface {
         $task->title = $request->title;
         $task->description = $request->description ?? null;
         $task->creator_id = Auth::id();
-        $task->project_id = $request->project_id ?? 1;
+        $task->project_id = $request->project_id;
         $task->priority = $request->priority;
         $task->save();
         return $task;

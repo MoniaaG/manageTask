@@ -17,12 +17,12 @@ class ProjectController extends Controller
     }
 
     public function index() {
-        $projects = Auth::user()->projects;
+        $projects = Auth::user()->community->projects()->get();
         return view('project.index', compact('projects'));
     }
 
     public function create() {
-        $users = Auth::user()->community()->users;
+        $users = Auth::user()->community->users()->get();
         return view('project.create', compact('users'));
     }
 
@@ -32,7 +32,7 @@ class ProjectController extends Controller
     }
 
     public function edit(Project $project) {
-        $users = Auth::user()->community()->users;
+        $users = Auth::user()->community->users;
         return view('project.edit', compact('project', 'users'));
     }
 

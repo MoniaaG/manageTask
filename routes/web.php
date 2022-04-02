@@ -23,8 +23,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/tasks', [TaskController::class, 'index'])->name('task.index');
-    Route::get('/task/get',[TaskController::class, 'getTasks']);
+    Route::get('/tasks/{project}', [TaskController::class, 'index'])->name('task.index');
     Route::get('/task/show', [TaskController::class, 'show'])->name('task.show');
     Route::get('/task/create', [TaskController::class, 'create'])->name('task.create');
     Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
