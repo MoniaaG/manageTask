@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Task\UpdateRequest;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -22,6 +21,8 @@ class TaskController extends Controller
     }
 
     public function index(Project $project) {
+        $this->authorize('index', $project);
+
         $tasks = $project->tasks;
         $statuses = Status::status();
         $priorities = Priority::priority();
@@ -31,6 +32,7 @@ class TaskController extends Controller
 
     public function show(Request $request) {
         $task = Task::findOrFail($request->id);
+        $this->authorize('show', $task);
         $users = $task->users()->pluck('users.id');
         return response()->json(['task' => $task, 'users' => $users]);
     }
@@ -41,7 +43,6 @@ class TaskController extends Controller
 
     public function update(UpdateRequest $request) {
         $this->task_repository->update($request);
-        ///toastr()->success('Task updated!');
     }
 
     public function delete(Request $request) {
