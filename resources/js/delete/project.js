@@ -1,12 +1,10 @@
 
 $(document).ready(function() {
     $(document).on('click', "[data-delete-href]", function () {
-        var id = $(this).data("delete-href");
-        var pro_id = $('.task-list').data('project');
-        console.log('xd');
+        var url = $(this).data("delete-href");
         bootbox.confirm({
-            title: 'Delete task',
-            message: `<div class="modal-icon"><i class="far fa-trash-alt mr-1"></i><span> Do you want to delete this task?</span></div>`,
+            title: 'Delete project',
+            message: `<div class="modal-icon"><i class="far fa-trash-alt mr-1"></i><span> Do you want to delete this project?</span></div>`,
             buttons: {
                 confirm: {
                     label: `<i class="fa fa-check mr-1"></i> Delete`,
@@ -19,18 +17,18 @@ $(document).ready(function() {
             },
             callback: function(confirm) {
                 if( confirm ) {
-                        axios.delete('/task/delete', {data: {id: id}})
+                        axios.delete(url)
                         .then((response) => {
                             bootbox.alert({
-                                title: 'Task was deleted',
+                                title: 'Project was deleted',
                                 message: `<div class="modal-icon"><i class="fa fa-check text-success mr-1"></i><span>Deleted</span></div>`,
                                 callback: function(confirm) {
-                                    $(location).attr("href", `/tasks/${pro_id}`);
+                                    $(location).attr("href", `/projects`);
                                 },
                             });
                         }, (error) => {
                             bootbox.alert({
-                                title: 'Can not delete task',
+                                title: 'Can not delete project',
                                 message: `<div class="modal-icon mr-1"><i class="fa fa-times text-danger"></i><span></span></div>`,
                             });
                         })

@@ -32,17 +32,22 @@ class ProjectController extends Controller
     }
 
     public function edit(Project $project) {
+        $this->authorize('update', $project);
+
         $users = Auth::user()->community->users;
         return view('project.edit', compact('project', 'users'));
     }
 
     public function update(Project $project, Request $request) {
+        $this->authorize('update', $project);
+
         $this->project_repository->update($project, $request);
         return redirect()->route('project.index');
     }
 
     public function delete(Project $project) {
+        $this->authorize('update', $project);
+
         $this->project_repository->delete($project);
-        return redirect()->route('project.index');
     }
 }

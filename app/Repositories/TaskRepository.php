@@ -17,6 +17,8 @@ class TaskRepository implements TaskRepositoryInterface {
         $task->priority = $request->priority;
         $task->status = $request->status;
         $task->save();
+
+        $task->users()->attach($request->users);
         return $task;
     }
 
@@ -28,6 +30,8 @@ class TaskRepository implements TaskRepositoryInterface {
         $task->project_id = $request->project_id;
         $task->priority = $request->priority;
         $task->save();
+
+        $task->users()->sync($request->users);
         return $task;
     }
 

@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Task\UpdateRequest;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -22,29 +21,24 @@ class TaskController extends Controller
     }
 
     public function index(Project $project) {
+        $this->authorize('index', $project);
+
         $tasks = $project->tasks;
         $statuses = Status::status();
         $priorities = Priority::priority();
-        return view('task.index', compact('tasks', 'statuses', 'priorities', 'project'));
+        $users = $project->users;
+        return view('task.index', compact('tasks', 'statuses', 'priorities', 'project', 'users'));
     }
 
     public function show(Request $request) {
         $task = Task::findOrFail($request->id);
-        return response()->json(['task' => $task]);
-    }
-
-    public function create() {
-        $users = Auth::user()->community()->users;
-        return view('task.create', compact('users'));
+        $this->authorize('show', $task);
+        $users = $task->users()->pluck('users.id');
+        return response()->json(['task' => $task, 'users' => $users]);
     }
 
     public function store(Request $request) {
         $task = $this->task_repository->store($request);
-    }
-
-    public function edit(Task $task) {
-        $users = Auth::user()->community()->users;
-        return view('task.edit', compact('task', 'users'));
     }
 
     public function update(UpdateRequest $request) {

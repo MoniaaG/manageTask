@@ -1,4 +1,4 @@
-<div class="modal fade show" id="modalCreateTask" tabindex="-1" role="dialog" aria-labelledby="modalCreateTask" aria-hidden="true">
+<div class="modal fade show" id="modalCreateTask"  role="dialog" aria-labelledby="modalCreateTask" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content bg-dark text-white">
         <div class="modal-header h4 text-warning">
@@ -33,6 +33,14 @@
                 </select>
               </div>
             </div> 
+            <div class="mb-3 col-12">
+              <label for="users" class="form-label text-warning col-12">Assign users to task</label>
+              <select id="users" class="form-control bg-dark text-white border-warning border-2 bg-secondary m-0" name="users[]" multiple="multiple">
+                  @foreach($users as $user)
+                      <option value="{{$user->id}}">{{$user->name}}</option>
+                  @endforeach
+              </select>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>

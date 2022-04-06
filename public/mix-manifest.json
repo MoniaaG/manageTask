@@ -2,6 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/js/task_dnd.js": "/js/task_dnd.js",
     "/js/delete/task.js": "/js/delete/task.js",
+    "/js/delete/project.js": "/js/delete/project.js",
+    "/js/delete/user.js": "/js/delete/user.js",
     "/js/task/task_add_update.js": "/js/task/task_add_update.js",
     "/css/app.css": "/css/app.css"
 }
