@@ -32,7 +32,6 @@ class TaskController extends Controller
 
     public function show(Request $request) {
         $task = Task::findOrFail($request->id);
-        $this->authorize('show', $task);
         $users = $task->users()->pluck('users.id');
         return response()->json(['task' => $task, 'users' => $users]);
     }

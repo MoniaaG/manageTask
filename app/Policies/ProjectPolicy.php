@@ -20,6 +20,10 @@ class ProjectPolicy
         //
     }
 
+    public function index(User $user, Project $project) {
+        return $user->community_id === $project->community_id || $project->users->contains('id', $user->id);
+    }
+
     public function update(User $user, Project $project) {
         return $user->id === $project->creator_id;
     }

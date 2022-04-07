@@ -20,12 +20,4 @@ class TaskPolicy
     {
         //
     }
-
-    public function index(User $user, Project $project) {
-        return $user->community_id === $project->community_id;
-    }
-
-    public function show(User $user, Task $task) {
-        return $user->id === $task->creator_id || $user->id === Project::find($task->project_id)->users();
-    }
 }
